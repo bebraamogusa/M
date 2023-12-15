@@ -1,6 +1,6 @@
 [EN](README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [JP](README_ja-JP.md) | [RU](README_ru-RU.md)
 
- #М
+ # М
  Новый инструмент динамической загрузки для «Genshin Impact»
 
   ## Инструкции по сборке
