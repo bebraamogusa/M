@@ -1,6 +1,6 @@
 [EN](README.md) |  [简中](README_zh-CN.md) |  [繁中](README_zh-TW.md) |  [JP](README_ja-JP.md) |  [RU](README_ru-RU.md)
  
-#M
+# M
 「原神」用の新しい動的読み込みツール
 
  ## 組み立て説明書
