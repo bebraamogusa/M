@@ -1,7 +1,7 @@
 [EN](README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [JP](README_ja-JP.md) | [RU](README_ru-RU.md)
 
-#M
- “原神”的新动态加载工具
+# M
+“原神”的新动态加载工具
 
  ## 搭建说明
  1.下载Visual Studio社区2022
