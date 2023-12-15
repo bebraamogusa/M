@@ -1,5 +1,5 @@
 # M
-new dynamically-loading tool for "园什“ 
+new dynamically-loading tool for "原神“ 
 
 ## Building instructions
 1. Download Visual Studio Community 2022
@@ -10,7 +10,7 @@ new dynamically-loading tool for "园什“
 Download the latest versions [here](https://github.com/kindawindytoday/Minty-Releases/releases).
 
 ## Disclaimer
-DISCLAIMER! We are not responsible for any actions you perform or recieve e.g. ban. This tool only provides limited protection against 米忽悠's anticheat system.
+DISCLAIMER! We are not responsible for any actions you perform or recieve e.g. ban. This tool only provides limited protection against 米哈游's anticheat system.
 
 ## Credits
 CREDITS go to the respective owners of such referenced or reused code. 
