@@ -1,3 +1,4 @@
+[EN](README.md) | [简中](README_zh-CN.md) | [繁中](README_zh-TW.md) | [JP](README_ja-JP.md) | [RU](README_ru-RU.md)
 # M
 new dynamically-loading tool for "原神“ 
 
