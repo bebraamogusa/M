@@ -217,3 +217,5 @@ DO_APP_FUNC(0x0341EBE0, 0x0, app::MotionState__Enum, MotionInfo_set_State, (app:
 DO_APP_FUNC(0x01A04B70, 0x01A0B570, void, MoleMole_DataItem_HandleNormalProp, (app::DataItem* __this, uint32_t type, int64_t value, app::DataPropOp__Enum state));
 // Wanderer E Stamina
 DO_APP_FUNC(0x02115EC0, 0x0211DD70, void, VCHumanoidMove_Scara, (app::VCHumanoidMove* __this, float value));
+
+DO_APP_FUNC(0x0, 0x0, void, QualitySettings_set_shadows, (app::ShadowQuality value));

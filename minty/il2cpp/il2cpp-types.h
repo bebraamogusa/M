@@ -8367,6 +8367,15 @@ typedef union Il2CppSingle_float
         struct Vector3 _lastCheckDynamicBarrierPostion;
     };
 
+    enum class ShadowQuality : int32_t {
+        Disable = 0,
+        HardOnly = 1,
+        All = 2,
+        ShadowsPCSS = 3,
+        ShadowsPCSSHigh = 4,
+        ShadowsPV = 5
+    };
+
     struct VCHumanoidMove {
         struct VCHumanoidMove__Class* klass;
         MonitorData* monitor;
