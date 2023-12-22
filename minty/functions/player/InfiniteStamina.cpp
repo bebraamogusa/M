@@ -74,8 +74,9 @@ namespace cheat {
 		auto& manager = game::EntityManager::getInstance();
 		auto entity = manager.entity(entityId);
 
+		//LOG_DEBUG("entityType: %s", magic_enum::enum_name(entity->type()).data());
 		if (entity->type() == app::EntityType__Enum_1::Vehicle || entity->isAvatar()) {
-			// LOG_DEBUG("Movement packet: %s", magic_enum::enum_name(app::MotionInfo_get_State(syncInfo)).data());
+			//LOG_DEBUG("Movement packet: %s", magic_enum::enum_name(app::MotionInfo_get_State(syncInfo)).data());
 			if (infiniteStamina.f_Enabled.getValue() && infiniteStamina.f_EnabledPacket.getValue()) {
 				auto state = app::MotionInfo_get_State(syncInfo);
 				switch (state) {

@@ -289,7 +289,7 @@ static app::Byte__Array* RecordUserData_Hook(int32_t nType) {
 }
 
 app::Byte__Array* OnRecordUserData(int32_t nType) {
-	if (m_CorrectSignatures.count(nType)) {
+	/*if (m_CorrectSignatures.count(nType)) {
 		auto byteClass = app::GetIl2Classes()[0x25];
 		auto& content = m_CorrectSignatures[nType];
 		auto newArrayNotByte = (app::Il2CppArray*) il2cpp_array_new(byteClass, content.size());
@@ -297,7 +297,7 @@ app::Byte__Array* OnRecordUserData(int32_t nType) {
 		
 		memmove_s(newArray->vector, content.size(), content.data(), content.size());
 		return newArray;
-	}
+	}*/
 
 	app::Byte__Array* result = CALL_ORIGIN(RecordUserData_Hook, nType);
 	auto resultArray = TO_UNI_ARRAY(result, byte);
@@ -306,7 +306,7 @@ app::Byte__Array* OnRecordUserData(int32_t nType) {
 	if (length == 0)
 		return result;
 
-	auto stringValue = std::string((char*)result->vector, length);
+	auto stringValue = std::string((char*) result->vector, length);
 	m_CorrectSignatures[nType] = stringValue;
 
 	LOG_DEBUG("Sniffed correct signature for type %d value '%s'", nType, stringValue.c_str());
@@ -330,9 +330,9 @@ static int RecordChecksumUserData_Hook(int type, char* out, int out_size) {
 
 	assert(type < sizeof(data) / sizeof(const char*));
 	ret = strlen(data[type]);
+
 	if (strcmp(data[type], out) != 0)
 		LOG_ERROR("Wrong checksum");
-
 	strncpy(out, data[type], out_size);
 	return ret;
 }
@@ -421,6 +421,17 @@ static __int64 __fastcall sub_18012A580_Hook(__int64 a1, __int64 a2) {
 void ProtectionBypass::Init() {
 	auto& settings = cheat::Settings::getInstance();
 
+	if (settings.f_DisableLog.getValue()) {
+		DisableLogReport();
+
+		while (hTelemetry == (uint64_t) nullptr) {
+			Sleep(1000);
+			hTelemetry = (uint64_t) GetModuleHandleA("telemetry.dll");
+		}
+
+		HookManager::install((sub_18012A580)(hTelemetry + 0x12A580), sub_18012A580_Hook);
+	}
+
 	if (settings.f_UseSignature.getValue()) {
 		HookManager::install(app::Unity_RecordUserData, RecordUserData_Hook);
 
@@ -438,17 +449,6 @@ void ProtectionBypass::Init() {
 
 	if (settings.f_DisableProtection.getValue())
 		CloseHandleByName(L"\\Device\\HoYoProtect");
-
-	if (settings.f_DisableLog.getValue()) {
-		DisableLogReport();
-
-		while (hTelemetry == (uint64_t) nullptr) {
-			Sleep(1000);
-			hTelemetry = (uint64_t) GetModuleHandleA("telemetry.dll");
-		}
-
-		HookManager::install((sub_18012A580)(hTelemetry + 0x12A580), sub_18012A580_Hook);
-	}
 
 	if (settings.f_SpoofACResult.getValue())
 		HookManager::install(app::MoleMole_LuaShellManager_ReportLuaShellResult, LuaShellManager_ReportLuaShellResult_Hook);

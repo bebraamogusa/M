@@ -7,8 +7,6 @@ namespace cheat {
     public:
         ConfigField<bool> f_Enabled;
         ConfigField<bool> f_EnabledAltSpeed;
-        ConfigField<bool> f_NoAnimation;
-        ConfigField<bool> f_DetectCollisions;
         ConfigField<float> f_Speed;
         ConfigField<float> f_AltSpeed;
 
@@ -22,8 +20,6 @@ namespace cheat {
         void Status() override;
 
         std::string getModule() override;
-
-        app::Vector3 prevPos, newPos, posCheck;
 
         static NoClip& getInstance();
 

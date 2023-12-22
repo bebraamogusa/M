@@ -1,7 +1,7 @@
 #include "FovChanger.h"
 
 namespace cheat {
-    static void InLevelCameraSetFov_Hook(app::Camera* __this, float value);
+    void InLevelCameraSetFov_Hook(app::Camera* __this, float value);
 
     FovChanger::FovChanger() {
         f_Enabled = config::getValue("functions:FovChanger", "enabled", false);
