@@ -160,7 +160,7 @@
     <ClCompile Include="functions\visuals\CameraZoom.cpp" />
     <ClCompile Include="Functions\World\AutoChallenge.cpp" />
     <ClCompile Include="Functions\World\AutoDestroy.cpp" />
-    <ClCompile Include="Functions\World\AutoLoot.cpp" />
+    <ClCompile Include="Functions\World\AutoLootM.cpp" />
     <ClCompile Include="functions\world\ElementalSight.cpp" />
     <ClCompile Include="functions\visuals\HideDamage.cpp" />
     <ClCompile Include="functions\visuals\HideReaction.cpp" />
