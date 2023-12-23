@@ -35,11 +35,11 @@
 //#include "../functions/world/SkipEnhanceAnimation.h"
 
 std::vector<std::string> ModuleOrder = {
-    "Player",
-    "World",
-    "Visuals",
-    "About",
-    "Settings"
+    _("Player"),
+    _("World"),
+    _("Visuals"),
+    _("About"),
+    _("Settings")
 };
 
 void Init() {
