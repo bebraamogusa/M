@@ -1,5 +1,13 @@
 {
   "EN": {
     "ABOUT": "About"
+  },
+  "CN": {
+    "About": "关于",
+    "World": "世界",
+    "Visuals": "视觉",
+    "Settings": "设置",
+    "Player": "玩家",
+    "Minty version : %s": "Minty 版本 : %s"
   }
 }

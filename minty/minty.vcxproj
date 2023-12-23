@@ -184,6 +184,8 @@
     <ClCompile Include="game\EntityManager.cpp" />
     <ClCompile Include="game\filters.cpp" />
     <ClCompile Include="game\SimpleFilter.cpp" />
+    <ClCompile Include="GUI\ResourceLoader.cpp" />
+    <ClCompile Include="GUI\mutil.cpp" />
     <ClCompile Include="il2cpp\il2cppUtils.cpp" />
     <ClCompile Include="functions\visuals\Peeking.cpp" />
     <ClCompile Include="functions\visuals\FovChanger.cpp" />
@@ -273,6 +275,8 @@
     <ClInclude Include="game\filters.h" />
     <ClInclude Include="game\IEntityFilter.h" />
     <ClInclude Include="game\SimpleFilter.h" />
+    <ClInclude Include="GUI\ResourceLoader.h" />
+    <ClInclude Include="GUI\mutil.h" />
     <ClInclude Include="il2cpp\detours.h" />
     <ClInclude Include="functions\Function.h" />
     <ClInclude Include="il2cpp\HookManager.h" />
@@ -462,4 +466,9 @@
   <ImportGroup Label="ExtensionTargets">
     <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties resources_4translations_1json__JsonSchema="https://download.stackhawk.com/hawk/jsonschema/hawkconfig.json" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

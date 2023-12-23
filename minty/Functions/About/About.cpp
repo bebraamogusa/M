@@ -2,9 +2,9 @@
 
 namespace cheat {
 	void About::GUI() {
-        ImGui::SeparatorText("About");
+        ImGui::SeparatorText(_("About"));
 
-        ImGui::Text("Minty version 1.41");
+        ImGui::Text(_("Minty version : %s"), "1.41");
         ImGui::Text("ImGui version: %s", ImGui::GetVersion());
         ImGui::Text("Design made with love by KittyKate :3");
 
