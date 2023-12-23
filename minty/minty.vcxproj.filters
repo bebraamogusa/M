@@ -112,6 +112,7 @@
     <ClCompile Include="Functions\World\MobVacuum.cpp" />
     <ClCompile Include="GUI\ResourceLoader.cpp" />
     <ClCompile Include="GUI\mutil.cpp" />
+    <ClCompile Include="Functions\World\AutoLoot.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gui\MainGUI.h" />
