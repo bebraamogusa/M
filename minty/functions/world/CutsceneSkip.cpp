@@ -16,7 +16,7 @@ namespace cheat {
     }
 
     void CutsceneSkip::GUI() {
-        ConfigCheckbox("Skip Cutscene", f_Enabled, "Skips cutscene. May break some game mechanics.");
+        ConfigCheckbox(_("Skip Cutscene"), f_Enabled, "Skips cutscene. May break some game mechanics.");
 
         if (f_Enabled.getValue()) {
             ImGui::Indent();

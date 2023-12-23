@@ -16,7 +16,7 @@ namespace cheat {
     }
 
     void DumbEnemies::GUI() {
-        ConfigCheckbox("Dumb Enemies", f_Enabled, "Enemies don't attack or use abilities against player.\n"
+        ConfigCheckbox(_("Dumb Enemies"), f_Enabled, "Enemies don't attack or use abilities against player.\n"
             "May not work with some enemies or enemy abilities.");
 
         if (f_Enabled.getValue()) {

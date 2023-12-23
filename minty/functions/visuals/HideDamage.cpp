@@ -16,7 +16,7 @@ namespace cheat {
     }
 
     void HideDamage::GUI() {
-        ConfigCheckbox("Hide Damage", f_Enabled, "Hide damage numbers.");
+        ConfigCheckbox(_("Hide Damage"), f_Enabled, "Hide damage numbers.");
 
         if (f_Enabled.getValue()) {
             ImGui::Indent();

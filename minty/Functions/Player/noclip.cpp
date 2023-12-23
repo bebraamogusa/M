@@ -22,7 +22,7 @@ namespace cheat {
 	}
 
 	void NoClip::GUI() {
-		ConfigCheckbox("No Clip", f_Enabled, "Enables No Clip (fast speed + no collision).\n"
+		ConfigCheckbox(_("No Clip"), f_Enabled, "Enables No Clip (fast speed + no collision).\n"
 			"To move, use WASD, Space (go up), and Shift (go down).");
 
 		if (f_Enabled.getValue()) {

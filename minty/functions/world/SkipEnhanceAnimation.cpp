@@ -24,7 +24,7 @@ namespace cheat {
 	}
 
 	void SkipEnhanceAnimation::GUI() {
-		ConfigCheckbox("Skip Enhance Animation", f_Enabled, "Skip weapon and artifact enhancement animation.");
+		ConfigCheckbox(_("Skip Enhance Animation"), f_Enabled, "Skip weapon and artifact enhancement animation.");
 
 		if (f_Enabled.getValue()) {
 			ImGui::Indent();

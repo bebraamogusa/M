@@ -47,7 +47,7 @@ namespace cheat {
     }
 
     void ProfileChanger::GUI() {
-        ConfigCheckbox("Profile Changer", f_Enabled, "Changes the profile visually.");
+        ConfigCheckbox(_("Profile Changer"), f_Enabled, "Changes the profile visually.");
 
         if (f_Enabled.getValue()) {
             ImGui::Indent();

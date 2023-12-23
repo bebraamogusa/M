@@ -16,7 +16,7 @@ namespace cheat {
     }
 
     void HideReaction::GUI() {
-        ConfigCheckbox("Hide Reaction", f_Enabled, "Hide elemental reactions.");
+        ConfigCheckbox(_("Hide Reaction"), f_Enabled, "Hide elemental reactions.");
 
         if (f_Enabled.getValue()) {
             ImGui::Indent();

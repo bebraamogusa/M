@@ -16,7 +16,7 @@ namespace cheat {
     }
 
     void ShowChestIndicator::GUI() {
-        ConfigCheckbox("Show Chest Indicator", f_Enabled, "Show chests, game mechanics.");
+        ConfigCheckbox(_("Show Chest Indicator"), f_Enabled, "Show chests, game mechanics.");
 
         if (f_Enabled.getValue()) {
             ImGui::Indent();

@@ -29,7 +29,7 @@ namespace cheat
 
 	void VacuumLoot::GUI()
 	{
-		ConfigCheckbox("Vacuum loot", f_Enabled, "Vacuum of various entities to the character"); 
+		ConfigCheckbox(_("Vacuum loot"), f_Enabled, "Vacuum of various entities to the character");
 		if (f_Enabled.getValue()) {
 			ImGui::Indent();
 			ConfigSliderInt("Delay Time (ms)", f_Delay, 1, 1000, "Delay (in ms) between loot vacuum.");
