@@ -10,7 +10,7 @@ namespace cheat {
         f_UseSignature = config::getValue("functions:Settings", "useSignature", false);
         f_ShowFps = config::getValue("functions:Settings", "showFps", true);
         f_ShowRpc = config::getValue("functions:Settings", "showRpc", true);
-        f_InitDelay = config::getValue("functions:Settings", "initDelay", 1000);
+        f_InitDelay = config::getValue("functions:Settings", "initDelay", 7000);
         f_StartupArguments = config::getValue<std::string>("functions:Settings", "startupArguments", "");
         f_AnimationDuration = config::getValue("functions:Settings", "animationDuration", 0.2f);
         f_Hotkey = Hotkey("functions:Settings:Menu", VK_F12);
