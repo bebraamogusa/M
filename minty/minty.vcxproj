@@ -160,6 +160,7 @@
     <ClCompile Include="functions\visuals\CameraZoom.cpp" />
     <ClCompile Include="Functions\World\AutoChallenge.cpp" />
     <ClCompile Include="Functions\World\AutoDestroy.cpp" />
+    <ClCompile Include="Functions\World\AutoLootM.cpp" />
     <ClCompile Include="functions\world\ElementalSight.cpp" />
     <ClCompile Include="functions\visuals\HideDamage.cpp" />
     <ClCompile Include="functions\visuals\HideReaction.cpp" />
@@ -220,6 +221,7 @@
     <ClInclude Include="functions\visuals\CameraZoom.h" />
     <ClInclude Include="Functions\World\AutoChallenge.h" />
     <ClInclude Include="Functions\World\AutoDestroy.h" />
+    <ClInclude Include="Functions\World\AutoLoot.h" />
     <ClInclude Include="functions\world\ElementalSight.h" />
     <ClInclude Include="functions\visuals\HideDamage.h" />
     <ClInclude Include="functions\visuals\HideReaction.h" />
