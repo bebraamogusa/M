@@ -17,7 +17,7 @@ namespace cheat {
 	}
 
 	void MultiHit::GUI() {
-		ConfigCheckbox("Multi Hit", f_Enabled, "Enables attack multipliers.");
+		ConfigCheckbox(_("Multi Hit"), f_Enabled, "Enables attack multipliers.");
 
 		if (f_Enabled.getValue()) {
 			ImGui::Indent();

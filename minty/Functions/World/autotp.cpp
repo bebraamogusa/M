@@ -23,7 +23,7 @@ namespace cheat {
     }
 
     void AutoTP::GUI() {
-        ConfigCheckbox("Auto TP", f_Enabled);
+        ConfigCheckbox(_("Auto TP"), f_Enabled);
 
         if (f_Enabled.getValue()) {
             ImGui::Indent();

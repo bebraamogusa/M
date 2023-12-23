@@ -22,7 +22,7 @@ namespace cheat {
 	}
 
 	void OpenTeamImmediately::GUI() {
-		ConfigCheckbox("Open Team Immediately", f_Enabled, "Open team immediately without waiting for count down.");
+		ConfigCheckbox(_("Open Team Immediately"), f_Enabled, "Open team immediately without waiting for count down.");
 
 		if (f_Enabled.getValue()) {
 			ImGui::Indent();

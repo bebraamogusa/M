@@ -19,7 +19,7 @@ namespace cheat {
     }
 
     void AutoTalk::GUI() {
-        ConfigCheckbox("Auto Talk", f_Enabled, _("Automatically goes through dialogue."));
+        ConfigCheckbox(_("Auto Talk"), f_Enabled, _("Automatically goes through dialogue."));
 
         if (f_Enabled.getValue()) {
             ImGui::Indent();

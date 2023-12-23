@@ -18,7 +18,7 @@ namespace cheat {
     }
 
     void Peeking::GUI() {
-        ConfigCheckbox("Enable Peeking", f_Enabled, ";)");
+        ConfigCheckbox(_("Enable Peeking"), f_Enabled, ";)");
 
         if (f_Enabled.getValue()) {
             ImGui::Indent();

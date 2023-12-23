@@ -22,7 +22,7 @@ namespace cheat {
 	}
 
 	void InfiniteStamina::GUI() {
-		ConfigCheckbox("Infinite Stamina", f_Enabled, "Enables infinite stamina option.");
+		ConfigCheckbox(_("Infinite Stamina"), f_Enabled, "Enables infinite stamina option.");
 
 		if (f_Enabled.getValue()) {
 			ImGui::Indent();

@@ -17,7 +17,7 @@ namespace cheat {
     }
 
     void FovChanger::GUI() {
-        ConfigCheckbox("Fov Changer", f_Enabled, "Custom camera field of view.");
+        ConfigCheckbox(_("Fov Changer"), f_Enabled, "Custom camera field of view.");
 
         if (f_Enabled.getValue()) {
             ImGui::Indent();

@@ -30,27 +30,27 @@ namespace cheat {
         ImGui::SameLine();
         HelpMarker("Show the Minty Menu.");
 
-        ConfigCheckbox("Disable protection", f_DisableProtection, "Close anitcheat handle.\n(changes will take effect after relaunch).");
-        ConfigCheckbox("Disable analytic log", f_DisableLog, "Disable game telemetry and analytic log from spamming the console.\n"
+        ConfigCheckbox(_("Disable protection"), f_DisableProtection, "Close anitcheat handle.\n(changes will take effect after relaunch).");
+        ConfigCheckbox(_("Disable analytic log"), f_DisableLog, "Disable game telemetry and analytic log from spamming the console.\n"
             "(changes will take effect after relaunch).");
-        ConfigCheckbox("Spoof anticheat result", f_SpoofACResult, "Spoofs/Blocks anticheat reports made by WindSeedClientNotify.\n"
+        ConfigCheckbox(_("Spoof anticheat result"), f_SpoofACResult, "Spoofs/Blocks anticheat reports made by WindSeedClientNotify.\n"
             "(changes will take effect after relaunch).");
-        ConfigCheckbox("Use predefined file signature", f_UseSignature, "Uses 'hardcoded' signature value for file check.\n"
+        ConfigCheckbox(_("Use predefined file signature"), f_UseSignature, "Uses 'hardcoded' signature value for file check.\n"
             "Can be useful, when you put the additional executable files to game directory.\n"
             "And can't pass the 'Integrity check' on login.\n"
             "(changes will take effect after relaunch).");
 
-        ConfigCheckbox("Show current FPS", f_ShowFps, "Shows the current FPS.");
-        ConfigCheckbox("Show Discord RPC", f_ShowRpc, "Shows the Discord RPC.\n(changes will take effect after relaunch).");
+        ConfigCheckbox(_("Show current FPS"), f_ShowFps, "Shows the current FPS.");
+        ConfigCheckbox(_("Show Discord RPC"), f_ShowRpc, "Shows the Discord RPC.\n(changes will take effect after relaunch).");
 
-        ConfigSliderInt("Initialization delay (ms)", f_InitDelay, 0, 60000,
+        ConfigSliderInt(_("Initialization delay (ms)"), f_InitDelay, 0, 60000,
             "Change delay before showing menu.\nMay cause lags while opening, so try to change this value in case.");
 
-        ConfigInputText("Startup arguments", f_StartupArguments, "Launch the game with command line arguments.\n"
+        ConfigInputText(_("Startup arguments"), f_StartupArguments, "Launch the game with command line arguments.\n"
             "(changes will take effect after relaunch).");
         TextURL("List of unity command line arguments", "https://docs.unity3d.com/Manual/PlayerCommandLineArguments.html", false, false);
 
-        ImGui::SeparatorText("Theme");
+        ImGui::SeparatorText(_("Theme"));
 
         static int themeIndex = 1;
         if (ImGui::RadioButton("Dark", &themeIndex, 1))
@@ -59,7 +59,7 @@ namespace cheat {
         if (ImGui::RadioButton("Light", &themeIndex, 2))
             setTheme(2);
 
-        ImGui::SeparatorText("Style");
+        ImGui::SeparatorText(_("Style"));
 
         static int styleIndex = 1;
         if (ImGui::RadioButton("Cozy", &styleIndex, 1))
@@ -78,7 +78,7 @@ namespace cheat {
             setFont(2);
 
         ImGui::SeparatorText("Customize");
-        ImGui::Checkbox("Show Style Editor", &show_style_editor);
+        ImGui::Checkbox(_("Show Style Editor"), &show_style_editor);
         ConfigSliderFloat("Duration of animation (s)", f_AnimationDuration, 0, 5.0f,
             "Window appearance animation duration.");
 	}

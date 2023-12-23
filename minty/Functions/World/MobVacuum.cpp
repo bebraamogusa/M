@@ -32,7 +32,7 @@ namespace cheat
 
 	void MobVacuum::GUI()
 	{
-		ConfigCheckbox("Mob Vacuum", f_Enabled, "Enables mob vacuum.\n" \
+		ConfigCheckbox(_("Mob Vacuum"), f_Enabled, "Enables mob vacuum.\n" \
 			"Mobs within the specified radius will move\nto a specified distance in front of the player.");
 
 		if (f_Enabled.getValue()) {

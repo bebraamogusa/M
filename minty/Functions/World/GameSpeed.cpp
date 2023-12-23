@@ -17,7 +17,7 @@ namespace cheat {
 	}
 
 	void GameSpeed::GUI() {
-		ConfigCheckbox("Game Speed", f_Enabled, "Speeds up game.");
+		ConfigCheckbox(_("Game Speed"), f_Enabled, "Speeds up game.");
 
 		if (f_Enabled.getValue()) {
 			ImGui::Indent();

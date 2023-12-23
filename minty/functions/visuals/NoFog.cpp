@@ -16,7 +16,7 @@ namespace cheat {
     }
 
     void NoFog::GUI() {
-        ConfigCheckbox("No Fog", f_Enabled, "Removes the fog.");
+        ConfigCheckbox(_("No Fog"), f_Enabled, "Removes the fog.");
 
         if (f_Enabled.getValue()) {
             ImGui::Indent();

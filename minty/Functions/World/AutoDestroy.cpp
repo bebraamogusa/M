@@ -28,15 +28,15 @@ namespace cheat
 
 	void AutoDestroy::GUI()
 	{
-		ConfigCheckbox("AutoDestroy", f_Enabled, "Instantly destroys non-living objects within range.");
+		ConfigCheckbox(_("AutoDestroy"), f_Enabled, "Instantly destroys non-living objects within range.");
 		if (f_Enabled.getValue()) {
 			ImGui::Indent();
-			ConfigCheckbox("Ores", f_DestroyOres, "Ores and variants, e.g. electro crystals, marrows, etc.");
-			ConfigCheckbox("Shields", f_DestroyShields, "Abyss mage/churl/slime shields.");
-			ConfigCheckbox("Doodads", f_DestroyDoodads, "Barrels, boxes, vases, etc.");
-			ConfigCheckbox("Plants", f_DestroyPlants, "Dandelion Seeds, Sakura Bloom, etc.");
-			ConfigCheckbox("Special Objects", f_DestroySpecialObjects, "Destroy Ancient Rime, Large and Small Rock Piles");
-			ConfigCheckbox("Special Chests", f_DestroySpecialChests, "Destroy Chests with Brambles, Frozen, or In Rocks");
+			ConfigCheckbox(_("Ores"), f_DestroyOres, "Ores and variants, e.g. electro crystals, marrows, etc.");
+			ConfigCheckbox(_("Shields"), f_DestroyShields, "Abyss mage/churl/slime shields.");
+			ConfigCheckbox(_("Doodads"), f_DestroyDoodads, "Barrels, boxes, vases, etc.");
+			ConfigCheckbox(_("Plants"), f_DestroyPlants, "Dandelion Seeds, Sakura Bloom, etc.");
+			ConfigCheckbox(_("Special Objects"), f_DestroySpecialObjects, "Destroy Ancient Rime, Large and Small Rock Piles");
+			ConfigCheckbox(_("Special Chests"), f_DestroySpecialChests, "Destroy Chests with Brambles, Frozen, or In Rocks");
 			ImGui::Unindent();
 			ConfigSliderFloat("Range (m)", f_Range, 0.1f, 15.0f);
 		}

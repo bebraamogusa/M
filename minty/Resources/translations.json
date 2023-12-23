@@ -8,6 +8,61 @@
     "Visuals": "视觉",
     "Settings": "设置",
     "Player": "玩家",
-    "Minty version : %s": "Minty 版本 : %s"
+    "Minty version : %s": "Minty 版本 : %s",
+    "God Mode": "上帝模式",
+    "Infinite Energy": "无限能量",
+    "Infinite Stamina": "无限体力",
+    "Multi Hit": "多重打击",
+    "No Clip": "穿墙",
+    "No Skill Cooldown": "技能无冷却",
+    "Instant Bow Charge": "即时弓箭充能",
+    "No Sprint Cooldown": "疾跑无冷却",
+    "Disable protection": "禁用保护",
+    "Disable analytic log": "禁用分析日志",
+    "Spoof anticheat result": "欺骗反作弊结果",
+    "Use predefined file signature": "使用预定义文件签名",
+    "Show current FPS": "显示当前帧数",
+    "Show Discord RPC": "显示Discord远程过程调用",
+    "Initialization delay (ms)": "初始化延迟（毫秒）",
+    "Startup arguments": "启动参数",
+    "Theme": "主题",
+    "Style": "样式",
+
+
+
+    "Hide Damage": "隐藏伤害",
+    "Hide Reaction": "隐藏反应",
+    "Hide UI": "隐藏用户界面",
+    "No Fog": "无雾",
+    "Enable Peeking": "启用窥视",
+    "Profile Changer": "个人资料变更",
+    "Unlock FPS": "解锁帧数",
+    "Show Chest Indicator": "显示宝箱指示器",
+    "Camera Zoom": "相机缩放",
+    "Fov Changer": "视野变更",
+
+    "Auto challenge": "自动挑战",
+    "AutoDestroy": "自动销毁",
+    "Ore": "矿石",
+    "Shields": "护盾",
+    "Special Chests": "特殊宝箱",
+    "Special Objects": "特殊物品",
+    "Plants": "植物",
+    "Doodads": "装饰物",
+    "Vacuum loot": "吸收战利品",
+    "Skip Enhance Animation": "跳过增强动画",
+    "Open Team Immediately": "立即开放团队",
+    "Mob Vacuum": "吸引敌人",
+    "Game Speed": "游戏速度",
+    "Permanent Elemental Sight": "永久元素视觉",
+    "Dumb Enemies": "愚蠢敌人",
+    "Skip Cutscene": "跳过过场动画",
+    "Auto TP": "自动传送",
+    "Auto Talk": "自动对话",
+
+
+
+
+    "Show Style Editor": "显示样式编辑器"
   }
 }

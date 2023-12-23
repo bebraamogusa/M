@@ -16,7 +16,7 @@ namespace cheat {
     }
 
     void ElementalSight::GUI() {
-        ConfigCheckbox("Permanent Elemental Sight", f_Enabled, "Elemental sight is kept on even when moving.\n"
+        ConfigCheckbox(_("Permanent Elemental Sight"), f_Enabled, "Elemental sight is kept on even when moving.\n"
                      "To turn off, toggle off and use Elemental Sight again.");
 
         if (f_Enabled.getValue()) {
