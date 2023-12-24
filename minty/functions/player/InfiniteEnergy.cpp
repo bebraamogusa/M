@@ -1,4 +1,4 @@
-#include "InfiniteEnergy.h"
+﻿#include "InfiniteEnergy.h"
 
 namespace cheat {
 	static bool LCAvatarCombat_IsEnergyMax(void* __this);
@@ -16,8 +16,8 @@ namespace cheat {
 	}
 
 	void InfiniteEnergy::GUI() {
-		ConfigCheckbox(_("Infinite Energy"), f_Enabled, "Removes energy requirement for elemental bursts.\n"
-			"(Energy bubble may appear incomplete but still usable)");
+		ConfigCheckbox(_("Infinite Energy"), f_Enabled, _("Removes energy requirement for elemental bursts.\n"
+			"(Energy bubble may appear incomplete but still usable)"));
 
 		if (f_Enabled.getValue()) {
 			ImGui::Indent();

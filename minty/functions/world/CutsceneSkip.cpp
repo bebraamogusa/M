@@ -1,4 +1,4 @@
-#include "CutsceneSkip.h"
+﻿#include "CutsceneSkip.h"
 
 namespace cheat {
     static void CriwareMediaPlayer_Update(app::CriwareMediaPlayer* __this, app::MethodInfo* method);
@@ -16,7 +16,7 @@ namespace cheat {
     }
 
     void CutsceneSkip::GUI() {
-        ConfigCheckbox(_("Skip Cutscene"), f_Enabled, "Skips cutscene. May break some game mechanics.");
+        ConfigCheckbox(_("Skip Cutscene"), f_Enabled, _("Skips cutscene. May break some game mechanics."));
 
         if (f_Enabled.getValue()) {
             ImGui::Indent();

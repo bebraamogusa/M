@@ -1,4 +1,4 @@
-#include "NoClip.h"
+﻿#include "NoClip.h"
 
 namespace cheat {
 	void GameManager_Update_Hook(app::GameManager* __this, app::MethodInfo* method);
@@ -22,20 +22,20 @@ namespace cheat {
 	}
 
 	void NoClip::GUI() {
-		ConfigCheckbox(_("No Clip"), f_Enabled, "Enables No Clip (fast speed + no collision).\n"
-			"To move, use WASD, Space (go up), and Shift (go down).");
+		ConfigCheckbox(_("No Clip"), f_Enabled, _("Enables No Clip (fast speed + no collision).\n"
+			"To move, use WASD, Space (go up), and Shift (go down)."));
 
 		if (f_Enabled.getValue()) {
 			ImGui::Indent();
-			ConfigSliderFloat("Speed", f_Speed, 0.1f, 100.0f, "No Clip move speed.\n"
-				"Not recommended setting above 5.0.");
-			ConfigCheckbox("Alternate No Clip", f_EnabledAltSpeed, "Allows usage of alternate speed when holding down LeftCtrl key.\n"
-				"Useful if you want to temporarily go faster/slower than the No Clip speed setting.");
+			ConfigSliderFloat(_("Speed"), f_Speed, 0.1f, 100.0f, _("No Clip move speed.\n"
+				"Not recommended setting above 5.0."));
+			ConfigCheckbox(_("Alternate No Clip"), f_EnabledAltSpeed, _("Allows usage of alternate speed when holding down LeftCtrl key.\n"
+				"Useful if you want to temporarily go faster/slower than the No Clip speed setting."));
 
 			if (f_EnabledAltSpeed.getValue()) {
 				ImGui::Indent();
-				ConfigSliderFloat("Alternate Speed", f_AltSpeed, 0.1f, 100.0f, "Alternate No Clip move speed.\n"
-					"Not recommended setting above 5.0.");
+				ConfigSliderFloat(_("Alternate Speed"), f_AltSpeed, 0.1f, 100.0f, _("Alternate No Clip move speed.\n"
+					"Not recommended setting above 5.0."));
 				f_HotkeyAlt.Draw();
 				ImGui::Unindent();
 			}

@@ -1,4 +1,4 @@
-#include "HideDamage.h"
+﻿#include "HideDamage.h"
 
 namespace cheat {
     void MonoParticleDamageTextContainer_ShowDamageText(void* __this, void* attackResult, void* attackee);
@@ -16,7 +16,7 @@ namespace cheat {
     }
 
     void HideDamage::GUI() {
-        ConfigCheckbox(_("Hide Damage"), f_Enabled, "Hide damage numbers.");
+        ConfigCheckbox(_("Hide Damage"), f_Enabled, _("Hide damage numbers."));
 
         if (f_Enabled.getValue()) {
             ImGui::Indent();

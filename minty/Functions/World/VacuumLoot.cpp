@@ -1,4 +1,4 @@
-#include "VacuumLoot.h"
+﻿#include "VacuumLoot.h"
 
 namespace cheat
 {
@@ -29,13 +29,13 @@ namespace cheat
 
 	void VacuumLoot::GUI()
 	{
-		ConfigCheckbox(_("Vacuum loot"), f_Enabled, "Vacuum of various entities to the character");
+		ConfigCheckbox(_("Vacuum loot"), f_Enabled, _("Vacuum of various entities to the character"));
 		if (f_Enabled.getValue()) {
 			ImGui::Indent();
-			ConfigSliderInt("Delay Time (ms)", f_Delay, 1, 1000, "Delay (in ms) between loot vacuum.");
-			ConfigSliderFloat("Radius (m)", f_Radius, 0.1f, 100.0f, "Radius of common loot vacuum.");
-			ConfigSliderFloat("Distance (m)", f_Distance, 0.1f, 10.0f, "Distance between the player and the loot.\n"
-				"Values under 1.5 may be too intruding.");
+			ConfigSliderInt("Delay Time (ms)", f_Delay, 1, 1000, _("Delay (in ms) between loot vacuum."));
+			ConfigSliderFloat("Radius (m)", f_Radius, 0.1f, 100.0f, _("Radius of common loot vacuum."));
+			ConfigSliderFloat("Distance (m)", f_Distance, 0.1f, 10.0f, _("Distance between the player and the loot.\n"
+				"Values under 1.5 may be too intruding."));
 
 			if (ImGui::BeginCombo("Select the loot to be picked up.", "Filters")) {
 				ConfigCheckbox("Ores", f_Ores);

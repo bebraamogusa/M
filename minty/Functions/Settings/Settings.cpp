@@ -1,4 +1,4 @@
-#include "Settings.h"
+﻿#include "Settings.h"
 
 namespace cheat {
     static void DrawFPS();
@@ -30,25 +30,25 @@ namespace cheat {
         ImGui::SameLine();
         HelpMarker("Show the Minty Menu.");
 
-        ConfigCheckbox(_("Disable protection"), f_DisableProtection, "Close anitcheat handle.\n(changes will take effect after relaunch).");
-        ConfigCheckbox(_("Disable analytic log"), f_DisableLog, "Disable game telemetry and analytic log from spamming the console.\n"
-            "(changes will take effect after relaunch).");
-        ConfigCheckbox(_("Spoof anticheat result"), f_SpoofACResult, "Spoofs/Blocks anticheat reports made by WindSeedClientNotify.\n"
-            "(changes will take effect after relaunch).");
-        ConfigCheckbox(_("Use predefined file signature"), f_UseSignature, "Uses 'hardcoded' signature value for file check.\n"
+        ConfigCheckbox(_("Disable protection"), f_DisableProtection, _("Close anitcheat handle.\n(changes will take effect after relaunch)."));
+        ConfigCheckbox(_("Disable analytic log"), f_DisableLog, _("Disable game telemetry and analytic log from spamming the console.\n"
+            "(changes will take effect after relaunch)."));
+        ConfigCheckbox(_("Spoof anticheat result"), f_SpoofACResult, _("Spoofs/Blocks anticheat reports made by WindSeedClientNotify.\n"
+            "(changes will take effect after relaunch)."));
+        ConfigCheckbox(_("Use predefined file signature"), f_UseSignature, _("Uses 'hardcoded' signature value for file check.\n"
             "Can be useful, when you put the additional executable files to game directory.\n"
             "And can't pass the 'Integrity check' on login.\n"
-            "(changes will take effect after relaunch).");
+            "(changes will take effect after relaunch)."));
 
-        ConfigCheckbox(_("Show current FPS"), f_ShowFps, "Shows the current FPS.");
-        ConfigCheckbox(_("Show Discord RPC"), f_ShowRpc, "Shows the Discord RPC.\n(changes will take effect after relaunch).");
+        ConfigCheckbox(_("Show current FPS"), f_ShowFps, _("Shows the current FPS."));
+        ConfigCheckbox(_("Show Discord RPC"), f_ShowRpc, _("Shows the Discord RPC.\n(changes will take effect after relaunch)."));
 
         ConfigSliderInt(_("Initialization delay (ms)"), f_InitDelay, 0, 60000,
-            "Change delay before showing menu.\nMay cause lags while opening, so try to change this value in case.");
+	    _("Change delay before showing menu.\nMay cause lags while opening, so try to change this value in case."));
 
-        ConfigInputText(_("Startup arguments"), f_StartupArguments, "Launch the game with command line arguments.\n"
-            "(changes will take effect after relaunch).");
-        TextURL("List of unity command line arguments", "https://docs.unity3d.com/Manual/PlayerCommandLineArguments.html", false, false);
+        ConfigInputText(_("Startup arguments"), f_StartupArguments, _("Launch the game with command line arguments.\n"
+            "(changes will take effect after relaunch)."));
+        TextURL(_("List of unity command line arguments"), "https://docs.unity3d.com/Manual/PlayerCommandLineArguments.html", false, false);
 
         ImGui::SeparatorText(_("Theme"));
 

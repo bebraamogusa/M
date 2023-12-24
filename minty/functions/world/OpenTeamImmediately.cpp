@@ -1,4 +1,4 @@
-#include "OpenTeamImmediately.h"
+﻿#include "OpenTeamImmediately.h"
 
 namespace cheat {
 	static bool MoleMole_InLevelMainPageContext_DoTeamCountDown_c_Iterator0__MoveNext_Hook(app::InLevelMainPageContext_DoTeamCountDown_Iterator* __this);
@@ -22,7 +22,7 @@ namespace cheat {
 	}
 
 	void OpenTeamImmediately::GUI() {
-		ConfigCheckbox(_("Open Team Immediately"), f_Enabled, "Open team immediately without waiting for count down.");
+		ConfigCheckbox(_("Open Team Immediately"), f_Enabled, _("Open team immediately without waiting for count down."));
 
 		if (f_Enabled.getValue()) {
 			ImGui::Indent();

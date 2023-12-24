@@ -1,4 +1,4 @@
-#include "GameSpeed.h"
+﻿#include "GameSpeed.h"
 
 namespace cheat {
 	void onUpdate_3(app::GameManager* __this, app::MethodInfo* method);
@@ -21,7 +21,7 @@ namespace cheat {
 
 		if (f_Enabled.getValue()) {
 			ImGui::Indent();
-			ConfigSliderFloat("Multiplier", f_Speed, 1.0f, 20.0f, "Set GameSpeed Multiplier");
+			ConfigSliderFloat(_("Multiplier"), f_Speed, 1.0f, 20.0f, _("Set GameSpeed Multiplier"));
 			f_Hotkey.Draw();
 			ImGui::Unindent();
 		}
