@@ -1,4 +1,4 @@
-#include "InfiniteStamina.h"
+﻿#include "InfiniteStamina.h"
 
 namespace cheat {
 	static void DataItem_HandleNormalProp_Hook(app::DataItem* __this, uint32_t type, int64_t value, app::DataPropOp__Enum state);
@@ -22,12 +22,12 @@ namespace cheat {
 	}
 
 	void InfiniteStamina::GUI() {
-		ConfigCheckbox(_("Infinite Stamina"), f_Enabled, "Enables infinite stamina option.");
+		ConfigCheckbox(_("Infinite Stamina"), f_Enabled, _("Enables infinite stamina option."));
 
 		if (f_Enabled.getValue()) {
 			ImGui::Indent();
-			ConfigCheckbox("Move Sync Packet Replacement", f_EnabledPacket, "This mode prevents sending server packets with stamina cost actions,\n"
-				"e.g. swim, climb, sprint, etc.");
+			ConfigCheckbox(_("Move Sync Packet Replacement"), f_EnabledPacket, _("This mode prevents sending server packets with stamina cost actions,\n"
+				"e.g. swim, climb, sprint, etc."));
 			f_Hotkey.Draw();
 			ImGui::Unindent();
 		}

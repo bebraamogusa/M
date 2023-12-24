@@ -1,4 +1,4 @@
-#include "CameraZoom.h"
+﻿#include "CameraZoom.h"
 
 namespace cheat {
     static void SCameraModuleInitialize_SetWarningLocateRatio_Hook(app::SCameraModuleInitialize* __this, double deltaTime, app::CameraShareData* data);
@@ -17,11 +17,11 @@ namespace cheat {
     }
 
     void CameraZoom::GUI() {
-        ConfigCheckbox(_("Camera Zoom"), f_Enabled, "Enables custom camera zoom settings.");
+        ConfigCheckbox(_("Camera Zoom"), f_Enabled, _("Enables custom camera zoom settings."));
 
         if (f_Enabled.getValue()) {
             ImGui::Indent();
-            ConfigSliderFloat("Zoom value", f_CameraZoom, 0.1f, 500.0f);
+            ConfigSliderFloat(_("Zoom value"), f_CameraZoom, 0.1f, 500.0f);
             f_Hotkey.Draw();
             ImGui::Unindent();
         }

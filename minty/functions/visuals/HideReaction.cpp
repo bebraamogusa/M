@@ -1,4 +1,4 @@
-#include "HideReaction.h"
+﻿#include "HideReaction.h"
 
 namespace cheat {
     void MonoParticleDamageTextContainer_ShowReactionText(void* __this, void* reaction, void* elemType1, void* elemType2, void* attackee, int hitIndex);
@@ -16,7 +16,7 @@ namespace cheat {
     }
 
     void HideReaction::GUI() {
-        ConfigCheckbox(_("Hide Reaction"), f_Enabled, "Hide elemental reactions.");
+        ConfigCheckbox(_("Hide Reaction"), f_Enabled, _("Hide elemental reactions."));
 
         if (f_Enabled.getValue()) {
             ImGui::Indent();

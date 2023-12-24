@@ -1,4 +1,4 @@
-#include "MultiHit.h"
+﻿#include "MultiHit.h"
 
 namespace cheat {
 	static void LCBaseCombat_FireBeingHitEvent_Hook(app::LCBaseCombat* __this, uint32_t attackeeRuntimeID, app::AttackResult* attackResult);
@@ -17,11 +17,11 @@ namespace cheat {
 	}
 
 	void MultiHit::GUI() {
-		ConfigCheckbox(_("Multi Hit"), f_Enabled, "Enables attack multipliers.");
+		ConfigCheckbox(_("Multi Hit"), f_Enabled, _("Enables attack multipliers."));
 
 		if (f_Enabled.getValue()) {
 			ImGui::Indent();
-			ConfigSliderInt("Hits", f_Hits, 1, 100, "Attack count multiplier.");
+			ConfigSliderInt(_("Hits"), f_Hits, 1, 100, _("Attack count multiplier."));
 			f_Hotkey.Draw();
 			ImGui::Unindent();
 		}

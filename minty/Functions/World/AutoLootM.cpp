@@ -34,73 +34,73 @@ namespace cheat {
   }
 
   void AutoLoot::GUI() {
-    ConfigCheckbox("Auto loot", f_Enabled, "ItemTeleport");
+    ConfigCheckbox(_("Auto loot"), f_Enabled, _("ItemTeleport"));
 
     if (f_Enabled.getValue()) {
       ImGui::Indent();
 
-      if (ImGui::BeginTable("AutoLootDrawTable", 2, ImGuiTableFlags_NoBordersInBody))
+      if (ImGui::BeginTable(_("AutoLootDrawTable"), 2, ImGuiTableFlags_NoBordersInBody))
       {
 	ImGui::TableNextRow();
 	ImGui::TableSetColumnIndex(0);
 
 	BeginGroupPanel("Auto-Pickup");
 	{
-	  ConfigCheckbox("Enabled", f_AutoPickup, "Automatically picks up dropped items.\n" \
+	  ConfigCheckbox(_("Enabled"), f_AutoPickup, _("Automatically picks up dropped items.\n" \
 	    "Note: Using this with custom range and low delay times is extremely risky.\n" \
 	    "Abuse will definitely merit a ban.\n\n" \
-	    "If using with custom range, make sure this is turned on FIRST.");
+	    "If using with custom range, make sure this is turned on FIRST."));
 	  ImGui::SameLine();
 	  ImGui::TextColored(ImColor(255, 165, 0, 255), "Read the note!");
 	}
 	EndGroupPanel();
 
-	BeginGroupPanel("Custom Pickup Range");
+	BeginGroupPanel(_("Custom Pickup Range"));
 	{
-	  ConfigCheckbox("Enabled", f_UseCustomRange, "Enable custom pickup range.\n" \
+	  ConfigCheckbox(_("Enabled"), f_UseCustomRange, _("Enable custom pickup range.\n" \
 	    "High values are not recommended, as it is easily detected by the server.\n\n" \
-	    "If using with auto-pickup/auto-treasure, turn this on LAST.");
+	    "If using with auto-pickup/auto-treasure, turn this on LAST."));
 	  ImGui::SameLine();
 	  ImGui::TextColored(ImColor(255, 165, 0, 255), "Read the note!");
 	  ImGui::SetNextItemWidth(100.0f);
-	  ConfigSliderFloat("Range (m)", f_CustomRange, 0.1f, 40.0f, "Modifies pickup/open range to this value (in meters).");
+	  ConfigSliderFloat(_("Range (m)"), f_CustomRange, 0.1f, 40.0f, _("Modifies pickup/open range to this value (in meters)."));
 	}
 	EndGroupPanel();
 
 	BeginGroupPanel("Looting Speed");
 	{
 	  ImGui::SetNextItemWidth(100.0f);
-	  ConfigSliderInt("Delay Time (ms)", f_DelayTime, 1, 1000, "Delay (in ms) between loot/open actions.\n" \
-	    "Values under 200ms are unsafe.\nNot used if no auto-functions are on.");
+	  ConfigSliderInt(_("Delay Time (ms)"), f_DelayTime, 1, 1000, _("Delay (in ms) between loot/open actions.\n" \
+	    "Values under 200ms are unsafe.\nNot used if no auto-functions are on."));
 	}
 	EndGroupPanel();
 
 	BeginGroupPanel("Looting delay fluctuation");
 	{
-	  ConfigCheckbox("Enabled", f_UseDelayTimeFluctuation, "Enable delay fluctuation.\n" \
-	    "Simulates human clicking delay as manual clickling never consistent.");
+	  ConfigCheckbox(_("Enabled"), f_UseDelayTimeFluctuation, _("Enable delay fluctuation.\n" \
+	    "Simulates human clicking delay as manual clickling never consistent."));
 	  ImGui::SameLine();
 	  ImGui::TextColored(ImColor(255, 165, 0, 255), "Read the note!");
 	  ImGui::SetNextItemWidth(100.0f);
-	  ConfigSliderInt("Delay range +(ms)", f_DelayTimeFluctuation, 1, 1000, "Delay randomly fluctuates between 'Delay Time'+'Delay Time+range'");
+	  ConfigSliderInt(_("Delay range +(ms)"), f_DelayTimeFluctuation, 1, 1000, _("Delay randomly fluctuates between 'Delay Time'+'Delay Time+range'"));
 	}
 	EndGroupPanel();
 
 	ImGui::TableSetColumnIndex(1);
 	BeginGroupPanel("Auto-Treasure");
 	{
-	  ConfigCheckbox("Enabled", f_AutoTreasure, "Automatically opens chests and other treasures.\n" \
+	  ConfigCheckbox(_("Enabled"), f_AutoTreasure, _("Automatically opens chests and other treasures.\n" \
 	    "Note: Using this with custom range and low delay times is extremely risky.\n" \
 	    "Abuse will definitely merit a ban.\n\n" \
-	    "If using with custom range, make sure this is turned on FIRST.");
+	    "If using with custom range, make sure this is turned on FIRST."));
 	  ImGui::SameLine();
 	  ImGui::TextColored(ImColor(255, 165, 0, 255), "Read the note!");
 	  ImGui::Indent();
-	  ConfigCheckbox("Chests", f_Chest, "Common, precious, luxurious, etc.");
-	  ConfigCheckbox("Leyline", f_Leyline, "Mora/XP, overworld/Trounce bosses, etc.");
-	  ConfigCheckbox("Search Points", f_Investigate, "Marked as Investigate/Search, etc.");
-	  ConfigCheckbox("Quest Interacts", f_QuestInteract, "Valid quest interact points.");
-	  ConfigCheckbox("Others", f_Others, "Book Pages, Spincrystals, etc.");
+	  ConfigCheckbox(_("Chests"), f_Chest, _("Common, precious, luxurious, etc."));
+	  ConfigCheckbox(_("Leyline"), f_Leyline, _("Mora/XP, overworld/Trounce bosses, etc."));
+	  ConfigCheckbox(_("Search Points"), f_Investigate, _("Marked as Investigate/Search, etc."));
+	  ConfigCheckbox(_("Quest Interacts"), f_QuestInteract, _("Valid quest interact points."));
+	  ConfigCheckbox(_("Others"), f_Others, _("Book Pages, Spincrystals, etc."));
 	  ImGui::Unindent();
 	}
 	EndGroupPanel();
@@ -109,11 +109,11 @@ namespace cheat {
 
       BeginGroupPanel("Pickup Filter");
       {
-	ConfigCheckbox("Enabled", f_PickupFilter, "Enable pickup filter.\n");
-	ConfigCheckbox("Animals", f_PickupFilter_Animals, "Fish, Lizard, Frog, Flying animals."); ImGui::SameLine();
-	ConfigCheckbox("Drop Items", f_PickupFilter_DropItems, "Material, Mineral, Artifact."); ImGui::SameLine();
-	ConfigCheckbox("Resources", f_PickupFilter_Resources, "Everything beside Animals and Drop Items (Plants, Books, etc)."); ImGui::SameLine();
-	ConfigCheckbox("Oculus", f_PickupFilter_Oculus, "Filter Oculus");
+	ConfigCheckbox(_("Enabled"), f_PickupFilter, _("Enable pickup filter.\n"));
+	ConfigCheckbox(_("Animals"), f_PickupFilter_Animals, _("Fish, Lizard, Frog, Flying animals.")); ImGui::SameLine();
+	ConfigCheckbox(_("Drop Items"), f_PickupFilter_DropItems, _("Material, Mineral, Artifact.")); ImGui::SameLine();
+	ConfigCheckbox(_("Resources"), f_PickupFilter_Resources, _("Everything beside Animals and Drop Items (Plants, Books, etc).")); ImGui::SameLine();
+	ConfigCheckbox(_("Oculus"), f_PickupFilter_Oculus, _("Filter Oculus"));
       }
       EndGroupPanel();
 

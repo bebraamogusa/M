@@ -1,4 +1,4 @@
-#include "NoCooldown.h"
+﻿#include "NoCooldown.h"
 
 namespace cheat {
 	static bool LCAvatarCombat_OnSkillStart(app::LCAvatarCombat* __this, uint32_t skillID, float multipler);
@@ -24,7 +24,7 @@ namespace cheat {
 	}
 
 	void NoCooldown::GUI() {
-		ConfigCheckbox(_("No Skill Cooldown"), f_EnabledSkill, "Remove cooldowns of elemental skills and bursts.");
+		ConfigCheckbox(_("No Skill Cooldown"), f_EnabledSkill, _("Remove cooldowns of elemental skills and bursts."));
 
 		if (f_EnabledSkill.getValue()) {
 			ImGui::Indent();
@@ -32,8 +32,8 @@ namespace cheat {
 			ImGui::Unindent();
 		}
 
-		ConfigCheckbox(_("Instant Bow Charge"), f_EnabledBow, "Disable cooldown of bow charge.\n"
-			"Known issues with Fischl.");
+		ConfigCheckbox(_("Instant Bow Charge"), f_EnabledBow, _("Disable cooldown of bow charge.\n"
+			"Known issues with Fischl."));
 
 		if (f_EnabledBow.getValue()) {
 			ImGui::Indent();
@@ -41,7 +41,7 @@ namespace cheat {
 			ImGui::Unindent();
 		}
 
-		ConfigCheckbox(_("No Sprint Cooldown"), f_EnabledSprint, "Removes delay in-between sprints.");
+		ConfigCheckbox(_("No Sprint Cooldown"), f_EnabledSprint, _("Removes delay in-between sprints."));
 
 		if (f_EnabledSprint.getValue()) {
 			ImGui::Indent();
