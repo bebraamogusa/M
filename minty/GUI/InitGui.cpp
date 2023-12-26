@@ -1,4 +1,4 @@
-#include "InitGui.h"
+﻿#include "InitGui.h"
 
 float alpha = 0;
 void MergeIconsWithLatestFont(float font_size, bool FontDataOwnedByAtlas) {

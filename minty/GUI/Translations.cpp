@@ -1,10 +1,10 @@
-#include "Translations.h"
+ï»¿#include "Translations.h"
 #include <optional>
 #include <charconv>
 
+
 std::string result;
 static bool ifParse;
-int LangTR = 2;
 
 std::string LoadResourceString(int resourceId, LPCSTR resourceType) {
   HMODULE handle = GetModuleHandle("minty.dll");
@@ -30,37 +30,39 @@ std::string LoadResourceString(int resourceId, LPCSTR resourceType) {
 
   return std::string(data, size);
 }
+#include "../functions/Settings/Settings.h"
+auto& settings = cheat::Settings::getInstance();
 
 std::optional<std::string> safeGet(nlohmann::json& json, const std::string& key, const std::string& lang) {
   if (json.contains(lang) && json[lang].is_object() && json[lang].contains(key)) {
     return json[lang][key].get<std::string>();
   }
-  return key; // Èç¹ûÃ»ÓĞÕÒµ½£¬·µ»ØÔ­±¾
+  return key; // å¦‚æœæ²¡æœ‰æ‰¾åˆ°ï¼Œè¿”å›åŸæœ¬
 }
 std::u8string u8result;
 const char* _(const char* code) {
-  static nlohmann::json trJson; // ½« trJson ÉèÖÃÎª static ÒÔ±ÜÃâÖØ¸´½âÎö
+  static nlohmann::json trJson; // å°† trJson è®¾ç½®ä¸º static ä»¥é¿å…é‡å¤è§£æ
 
   if (result.empty()) {
     result = LoadResourceString(R_LANGUAGES, RT_RCDATA);
     LOG_DEBUG("loading languages...");
     if (result.empty()) {
-      return code; // Èç¹û×ÊÔ´¼ÓÔØÊ§°Ü£¬·µ»ØÔ­Ê¼´úÂë
+      return code; // å¦‚æœèµ„æºåŠ è½½å¤±è´¥ï¼Œè¿”å›åŸå§‹ä»£ç 
     }
     try {
       trJson = nlohmann::json::parse(result);
     }
     catch (nlohmann::json::parse_error& e) {
       LOG_ERROR("JSON parsing error: %s", e.what());
-      return code; // Èç¹û½âÎö³ö´í£¬·µ»ØÔ­Ê¼´úÂë
+      return code; // å¦‚æœè§£æå‡ºé”™ï¼Œè¿”å›åŸå§‹ä»£ç 
     }
     LOG_DEBUG("parse languages...");
   }
   //return code;
-  std::string retStr = code; // ÉèÖÃÄ¬ÈÏ·µ»Ø×Ö·û´®
+  std::string retStr = code; // è®¾ç½®é»˜è®¤è¿”å›å­—ç¬¦ä¸²
   std::optional<std::string> ret;
-
-  switch (LangTR) {
+  int languageValue = settings.f_Language.getValue();
+  switch (languageValue) {
   case 0:
     ret = safeGet(trJson, code, "EN");
     break;

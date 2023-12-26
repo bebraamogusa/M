@@ -1,4 +1,4 @@
-#include "GuiUtils.h"
+﻿#include "GuiUtils.h"
 
 void HelpMarker(const char* description) {
     ImGui::TextDisabled("(?)");
@@ -151,6 +151,24 @@ bool BeginGroupPanel(const char* label, bool node, const ImVec2& size)
 	return true;
 }
 
+const char* languages[] = { "English",
+("Russian/Not supported at this time"),
+("Chinese"),
+("Indonesian/Not supported at this time")
+};
+void ConfigComboLanguage(ConfigField<int>& f_Language) {
+
+  int currentLanguage = f_Language.getValue();
+
+  if (ImGui::Combo(_("Select your language"), &currentLanguage, languages, IM_ARRAYSIZE(languages))) {
+    f_Language.setValue(currentLanguage); // 更新语言值
+    config::setValue(f_Language, currentLanguage); // 更新配置
+    //RefreshMenu(); // 刷新菜单
+    exit(0);
+    
+  }
+  // 如果有额外的小部件结束标记或逻辑，请在这里加入
+}
 void EndGroupPanel()
 {
 	IM_ASSERT(_groupPanelStack.Size > 0); // Mismatched BeginGroupPanel()/EndGroupPanel() calls

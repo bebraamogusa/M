@@ -13,6 +13,7 @@ namespace cheat {
 		ConfigField<bool> f_ShowFps;
 		ConfigField<bool> f_ShowRpc;
 		ConfigField<int> f_InitDelay;
+		ConfigField<int> f_Language;
 		ConfigField<bool> f_mobileMode;
 		ConfigField<std::string> f_StartupArguments;
 		ConfigField<float> f_AnimationDuration;

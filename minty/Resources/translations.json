@@ -100,12 +100,15 @@
     "Chinese localization by Amireux": "汉化 by Amireux",
     "Multiplier": "倍数",
     "Set GameSpeed Multiplier": "设置游戏速度",
-    "Speeds up game.": "加快游戏速度.",
     "Enables infinite stamina option.": "启用无限体力选项.",
     "Move Sync Packet Replacement": "移动同步包替换",
-    "Speeds up game.": "加快游戏速度.",
     "Hits": "点击数",
     "Attack count multiplier.": "攻击次数乘数.",
-    "Hotkey": "热键"
+    "Hotkey": "热键",
+    "Select your language": "选择你的语言",
+    "English": "英语",
+    "Russian": "俄语",
+    "Chinese": "中文",
+    "Indonesian": "印尼语"
   }
 }
