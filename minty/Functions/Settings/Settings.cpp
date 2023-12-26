@@ -11,6 +11,7 @@ namespace cheat {
         f_ShowFps = config::getValue("functions:Settings", "showFps", true);
         f_ShowRpc = config::getValue("functions:Settings", "showRpc", true);
         f_InitDelay = config::getValue("functions:Settings", "initDelay", 7000);
+	f_mobileMode = config::getValue("functions:Settings", "mobileMode", false);
         f_StartupArguments = config::getValue<std::string>("functions:Settings", "startupArguments", "");
         f_AnimationDuration = config::getValue("functions:Settings", "animationDuration", 0.2f);
         f_Hotkey = Hotkey("functions:Settings:Menu", VK_F12);
@@ -46,6 +47,8 @@ namespace cheat {
         ConfigSliderInt(_("Initialization delay (ms)"), f_InitDelay, 0, 60000,
 	    _("Change delay before showing menu.\nMay cause lags while opening, so try to change this value in case."));
 
+	ConfigCheckbox(_("mobileMode"), f_mobileMode, _("Using mobile platform touch screen mode\n""please restart."));
+	    
         ConfigInputText(_("Startup arguments"), f_StartupArguments, _("Launch the game with command line arguments.\n"
             "(changes will take effect after relaunch)."));
         TextURL(_("List of unity command line arguments"), "https://docs.unity3d.com/Manual/PlayerCommandLineArguments.html", false, false);
