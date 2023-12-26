@@ -5,6 +5,7 @@
 
 std::string result;
 static bool ifParse;
+int LangTR = 0;
 
 std::string LoadResourceString(int resourceId, LPCSTR resourceType) {
   HMODULE handle = GetModuleHandle("minty.dll");
