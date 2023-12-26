@@ -75,6 +75,9 @@ const char* _(const char* code) {
   case 3:
     ret = safeGet(trJson, code, "ID");
     break;
+  case 4:
+    ret = safeGet(trJson, code, "RO");
+    break;
   default:
     ret = safeGet(trJson, code, "EN");
     break;

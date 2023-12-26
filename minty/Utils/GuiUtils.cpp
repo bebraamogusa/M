@@ -152,9 +152,10 @@ bool BeginGroupPanel(const char* label, bool node, const ImVec2& size)
 }
 
 const char* languages[] = { "English",
-("Russian/Not supported at this time"),
+("Russian"),
 ("Chinese"),
-("Indonesian/Not supported at this time")
+("Indonesian/Not supported at this time"),
+("Romanian")
 };
 void ConfigComboLanguage(ConfigField<int>& f_Language) {
 
