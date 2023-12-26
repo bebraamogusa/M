@@ -11,6 +11,7 @@ namespace cheat {
         f_ShowFps = config::getValue("functions:Settings", "showFps", true);
         f_ShowRpc = config::getValue("functions:Settings", "showRpc", true);
         f_InitDelay = config::getValue("functions:Settings", "initDelay", 7000);
+	f_Language = config::getValue("functions:Settings", "f_Language", 0);
 	f_mobileMode = config::getValue("functions:Settings", "mobileMode", false);
         f_StartupArguments = config::getValue<std::string>("functions:Settings", "startupArguments", "");
         f_AnimationDuration = config::getValue("functions:Settings", "animationDuration", 0.2f);
@@ -24,7 +25,13 @@ namespace cheat {
         static Settings instance;
         return instance;
     }
+    const char* languages[] = { "English", "Russian", "Chinese", "Indonesian" };
+    void RefreshMenu() {
+      // 刷新菜单的逻辑
+      
 
+
+    }
     void Settings::GUI() {
         ImGui::SeparatorText("General");
 
@@ -54,6 +61,9 @@ namespace cheat {
 	    _("Change delay before showing menu.\nMay cause lags while opening, so try to change this value in case."));
 
 	ConfigCheckbox(_("mobileMode"), f_mobileMode, _("Using mobile platform touch screen mode\n""please restart."));
+
+	//更换语言
+	ConfigComboLanguage(f_Language);
 	    
         ConfigInputText(_("Startup arguments"), f_StartupArguments, _("Launch the game with command line arguments.\n"
             "(changes will take effect after relaunch)."));
@@ -90,6 +100,9 @@ namespace cheat {
         ImGui::Checkbox(_("Show Style Editor"), &show_style_editor);
         ConfigSliderFloat("Duration of animation (s)", f_AnimationDuration, 0, 5.0f,
             "Window appearance animation duration.");
+
+
+
 	}
 
     void Settings::Outer() {

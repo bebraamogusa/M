@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #define IMGUI_DEFINE_MATH_OPERATORS
 #include <Windows.h>
@@ -77,6 +77,10 @@ void ConfigSliderFloat(const char* name, ConfigField<T>& field, const float min,
     }
     END_WIDGET();
 }
+
+
+void ConfigComboLanguage(ConfigField<int>& f_Language);
+
 
 void AddUnderLine(ImColor col_);
 void TextURL(const char* name_, const char* URL_, bool SameLineBefore_, bool SameLineAfter_);
