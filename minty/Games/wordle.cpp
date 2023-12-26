@@ -154,11 +154,14 @@ void wordle_copy_as_emoji() {
             emojis += "\n";
         }
         if (wordle_button_state[i] == 1) {
-            emojis += "⬛";
+            //emojis += "⬛";
+            emojis += "";
         } else if (wordle_button_state[i] == 2) {
-            emojis += "🟨";
+          //  emojis += "🟨";
+            emojis += "";
         } else if (wordle_button_state[i] == 3) {
-            emojis += "🟩";
+            //emojis += "🟩";
+            emojis += "";
         } else {
             emojis += "";
         }
