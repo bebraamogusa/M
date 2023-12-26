@@ -1,4 +1,4 @@
-#include "ProfileChanger.h"
+﻿#include "ProfileChanger.h"
 
 namespace cheat {
     static void onUpdate_1(app::GameManager* __this, app::MethodInfo* method);
@@ -47,11 +47,11 @@ namespace cheat {
     }
 
     void ProfileChanger::GUI() {
-        ConfigCheckbox("Profile Changer", f_Enabled, "Changes the profile visually.");
+        ConfigCheckbox(_("Profile Changer"), f_Enabled, _("Changes the profile visually."));
 
         if (f_Enabled.getValue()) {
             ImGui::Indent();
-            ConfigCheckbox("UID", f_EnabledUid, "Changes the UID visually.");
+            ConfigCheckbox("UID", f_EnabledUid, _("Changes the UID visually."));
 
             if (f_EnabledUid.getValue()) {
                 ConfigInputText("UID Value", f_Uid);

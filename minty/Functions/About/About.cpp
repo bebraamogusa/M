@@ -1,12 +1,13 @@
-#include "About.h"
+﻿#include "About.h"
 
 namespace cheat {
 	void About::GUI() {
-        ImGui::SeparatorText("About");
+        ImGui::SeparatorText(_("About"));
 
-        ImGui::Text("Minty version 1.40.1");
+        ImGui::Text(_("Minty version : %s"), "1.41");
         ImGui::Text("ImGui version: %s", ImGui::GetVersion());
         ImGui::Text("Design made with love by KittyKate :3");
+	ImGui::Text(_("Chinese localization by Amireux"));
 
         ImGui::SeparatorText("Contributors");
 
@@ -16,11 +17,11 @@ namespace cheat {
         ImGui::TextColored(ImVec4(255, 0, 212, 255), "Donaters: Thomas_Heath, Blair, unmeinoshonen, USSY");
         ImGui::TextColored(ImVec4(0, 255, 179, 255), "Special thanks to family: Futchev, yarik0chka, keitaro_gg");
 
-        ImGui::Text("Minty Github: ");
-        TextURL("Link", "https://github.com/kindawindytoday/Minty-Releases", true, false);
+	ImGui::Text("Minty Github: ");
+	TextURL("Link", "https://github.com/kindawindytoday/Minty-Releases", true, false);
 
-        ImGui::Text("KWT Discord: ");
-        TextURL("Link", "https://discord.gg/kindawindytoday", true, false);
+	ImGui::Text("KWT Discord: ");
+	TextURL("Link", "https://discord.gg/kindawindytoday", true, false);
 	}
 
     std::string About::getModule() {

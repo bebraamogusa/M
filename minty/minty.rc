@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// Русский (Россия) resources
+// Русски?(Росс?) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
 LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
@@ -50,9 +50,9 @@ END
 // RCDATA
 //
 
-IDR_RCDATA1             RCDATA                  "themes\\fonts\\m-n.otf"
+IDR_RCDATA1             RCDATA                  "themes\\fonts\\MiSans-Regular.ttf"
 
-IDR_RCDATA2             RCDATA                  "resources\\translations.json"
+R_LANGUAGES             RCDATA                  "resources\\translations.json"
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -62,7 +62,7 @@ IDR_RCDATA2             RCDATA                  "resources\\translations.json"
 
 IDB_PNG1                PNG                     "gato.png"
 
-#endif    // Русский (Россия) resources
+#endif    // Русски?(Росс?) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

@@ -1,4 +1,4 @@
-#include "SkipEnhanceAnimation.h"
+﻿#include "SkipEnhanceAnimation.h"
 
 namespace cheat {
     static void MoleMole_EquipLevelUpDialogContext_SetupView_Hook(app::MoleMole_EquipLevelUpDialogContext* __this);
@@ -15,7 +15,7 @@ namespace cheat {
 
         HookManager::install(app::MoleMole_EquipLevelUpDialogContext_SetupView, MoleMole_EquipLevelUpDialogContext_SetupView_Hook);
         HookManager::install(app::MoleMole_EquipOverviewPageContext_PlayExpAddAnimation, MoleMole_EquipOverviewPageContext_PlayExpAddAnimation_Hook);
-        HookManager::install(app::MoleMole_EquipOverviewPageContext_PlayLevelUpSuccessShow, MoleMole_EquipOverviewPageContext_PlayLevelUpSuccessShow_Hook);
+        //HookManager::install(app::MoleMole_EquipOverviewPageContext_PlayLevelUpSuccessShow, MoleMole_EquipOverviewPageContext_PlayLevelUpSuccessShow_Hook);
 	}
 
 	SkipEnhanceAnimation& SkipEnhanceAnimation::getInstance() {
@@ -24,11 +24,11 @@ namespace cheat {
 	}
 
 	void SkipEnhanceAnimation::GUI() {
-		ConfigCheckbox("Skip Enhance Animation", f_Enabled, "Skip weapon and artifact enhancement animation.");
+		ConfigCheckbox(_("Skip Enhance Animation"), f_Enabled, _("Skip weapon and artifact enhancement animation."));
 
 		if (f_Enabled.getValue()) {
 			ImGui::Indent();
-            ConfigCheckbox("Show Level-Up Dialog For Substat Rolls", f_ShowLevelUp, _("Show level up dialog when artifacts roll substats\n"
+            ConfigCheckbox(_("Show Level-Up Dialog For Substat Rolls"), f_ShowLevelUp, _("Show level up dialog when artifacts roll substats\n"
                 "(when hitting levels 4, 8, 12, 16, and 20)."));
             f_Hotkey.Draw();
 			ImGui::Unindent();

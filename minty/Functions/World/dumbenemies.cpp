@@ -1,4 +1,4 @@
-#include "DumbEnemies.h"
+﻿#include "DumbEnemies.h"
 
 namespace cheat {
     static void VCMonsterAIController_TryDoSkill_Hook(void* __this, uint32_t skillID);
@@ -16,8 +16,8 @@ namespace cheat {
     }
 
     void DumbEnemies::GUI() {
-        ConfigCheckbox("Dumb Enemies", f_Enabled, "Enemies don't attack or use abilities against player.\n"
-            "May not work with some enemies or enemy abilities.");
+        ConfigCheckbox(_("Dumb Enemies"), f_Enabled, _("Enemies don't attack or use abilities against player.\n"
+            "May not work with some enemies or enemy abilities."));
 
         if (f_Enabled.getValue()) {
             ImGui::Indent();

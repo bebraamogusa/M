@@ -1,4 +1,4 @@
-#include "NoFog.h"
+﻿#include "NoFog.h"
 
 namespace cheat {
     static void onUpdate_5(app::GameManager* __this, app::MethodInfo* method);
@@ -16,7 +16,7 @@ namespace cheat {
     }
 
     void NoFog::GUI() {
-        ConfigCheckbox("No Fog", f_Enabled, "Removes the fog.");
+        ConfigCheckbox(_("No Fog"), f_Enabled, _("Removes the fog."));
 
         if (f_Enabled.getValue()) {
             ImGui::Indent();

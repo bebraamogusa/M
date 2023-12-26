@@ -1,4 +1,4 @@
-#include "HideUI.h"
+﻿#include "HideUI.h"
 
 namespace cheat {
     static void onUpdate_4(app::GameManager* __this, app::MethodInfo* method);
@@ -16,7 +16,7 @@ namespace cheat {
     }
 
     void HideUI::GUI() {
-        ConfigCheckbox("Hide UI", f_Enabled, "Hide in-game UI.");
+        ConfigCheckbox(_("Hide UI"), f_Enabled, _("Hide in-game UI."));
 
         if (f_Enabled.getValue()) {
             ImGui::Indent();

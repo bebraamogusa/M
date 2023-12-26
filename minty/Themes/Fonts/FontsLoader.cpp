@@ -23,7 +23,8 @@ bool LoadFontFromResources(ImFontConfig font_cfg, const wchar_t* fontName, float
 
     // Create a memory buffer for the font data
     font_cfg.FontDataOwnedByAtlas = false; // We'll keep the memory until ImGui is shut down
-    ImGui::GetIO().Fonts->AddFontFromMemoryTTF(pData, dataSize, fontSize, &font_cfg);
+    const ImWchar* glyph_ranges = ImGui::GetIO().Fonts->GetGlyphRangesChineseFull();
+    ImGui::GetIO().Fonts->AddFontFromMemoryTTF(pData, dataSize, fontSize, &font_cfg, glyph_ranges);
 
     // Clean up the resource handles
     UnlockResource(hMemory);

@@ -68,14 +68,15 @@ namespace cheat::game {
 
 	app::LCBaseCombat* Entity::combat()
 	{
-		if (!isLoaded())
+		/*if (!isLoaded())
 			return nullptr;
 
 		SAFE_BEGIN();
 		return app::MoleMole_BaseEntity_GetLogicCombatComponent_1(m_RawEntity, *app::MoleMole_BaseEntity_GetLogicCombatComponent_1__MethodInfo);
 		SAFE_ERROR();
 		return nullptr;
-		SAFE_END();
+		SAFE_END();*/
+		return nullptr;
 	}
 
 
@@ -154,6 +155,7 @@ namespace cheat::game {
 			return false;
 		return avatar->raw() == m_RawEntity;
 	}
+
 	void Entity::setRelativePosition(const app::Vector3& value) {
 		if (m_RawEntity == nullptr)
 			return;

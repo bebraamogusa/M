@@ -1,4 +1,4 @@
-#include <Windows.h>
+﻿#include <Windows.h>
 #include <d3d11.h>
 #pragma comment(lib, "d3d11.lib")
 #include <sstream>
@@ -12,6 +12,7 @@
 #include "../minty/api/json/json.hpp"
 
 namespace fs = std::filesystem;
+std::string mobileMode = "use_mobile_platform -is_cloud 1 -platform_type CLOUD_THIRD_PARTY_MOBILE";
 
 bool InjectStandard(HANDLE hTarget, const char* dllpath) {
     LPVOID loadlib = GetProcAddress(GetModuleHandle(L"kernel32"), "LoadLibraryA");
@@ -86,6 +87,7 @@ void StartAndInject(std::string exe_path, std::filesystem::path dll_path, std::s
     PROCESS_INFORMATION proc_info{};
     STARTUPINFOA startup_info{};
 
+    
     std::string command_line = exe_path + " " + startupArguments;
 
     if (CreateProcessA(nullptr, const_cast<char*>(command_line.c_str()), nullptr, nullptr, FALSE, 0, nullptr, nullptr, &startup_info, &proc_info)) {
@@ -133,6 +135,7 @@ int main() {
             // Write the executable path to the settings file
             cfg["general"]["execPath"] = exe_path;
             cfg["functions"]["Settings"]["startupArguments"] = "";
+	   
 
             settings_file << cfg.dump(4) << std::endl;
             exe_path = cfg["general"]["execPath"];
@@ -171,7 +174,10 @@ int main() {
                 }
 
                 exe_path = cfg["general"]["execPath"];
-                startupArguments = cfg["functions"]["Settings"]["startupArguments"];
+		startupArguments = cfg["functions"]["Settings"]["startupArguments"];
+		if (cfg["functions"]["Settings"]["mobileMode"] == true)
+		    StartAndInject(exe_path, dll_path, mobileMode + " " + startupArguments); 
+                else
                 StartAndInject(exe_path, dll_path, startupArguments);
                 return 0;
             }
@@ -225,8 +231,10 @@ int main() {
         }
         exe_path = cfg["general"]["execPath"];
     }
-
-    StartAndInject(exe_path, dll_path, startupArguments);
+    if (cfg["functions"]["Settings"]["mobileMode"] == true)
+	StartAndInject(exe_path, dll_path, mobileMode + " " + startupArguments);
+    else
+        StartAndInject(exe_path, dll_path, startupArguments);
     return 0;
 }
 

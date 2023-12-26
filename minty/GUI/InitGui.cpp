@@ -24,7 +24,7 @@ void gui::InitImGui(HWND window, ID3D11Device* pDevice, ID3D11DeviceContext* pCo
     ImGui::GetIO().ImeWindowHandle = window;
     ImFontConfig font_cfg;
 
-    LoadFontFromResources(font_cfg, MAKEINTRESOURCEW(102), 20.f);
+    
 
     font_cfg.FontDataOwnedByAtlas = false;
 
@@ -33,6 +33,7 @@ void gui::InitImGui(HWND window, ID3D11Device* pDevice, ID3D11DeviceContext* pCo
     //MergeIconsWithLatestFont(16.f, false);
     LoadThemes();
     LoadFonts();
+    LoadFontFromResources(font_cfg, MAKEINTRESOURCEW(102), 20.f);
     Init();
 }
 

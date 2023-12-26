@@ -1,4 +1,4 @@
-#include "ElementalSight.h"
+﻿#include "ElementalSight.h"
 
 namespace cheat {
     static void LevelSceneElementViewPlugin_Tick_Hook(app::LevelSceneElementViewPlugin* __this, float inDeltaTime);
@@ -16,8 +16,8 @@ namespace cheat {
     }
 
     void ElementalSight::GUI() {
-        ConfigCheckbox("Permanent Elemental Sight", f_Enabled, "Elemental sight is kept on even when moving.\n"
-                     "To turn off, toggle off and use Elemental Sight again.");
+        ConfigCheckbox(_("Permanent Elemental Sight"), f_Enabled, _("Elemental sight is kept on even when moving.\n"
+                     "To turn off, toggle off and use Elemental Sight again."));
 
         if (f_Enabled.getValue()) {
             ImGui::Indent();

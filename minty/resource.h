@@ -1,10 +1,12 @@
-//{{NO_DEPENDENCIES}}
-// Включаемый файл, созданный в Microsoft Visual C++.
-// Используется minty.rc
+п»ї//{{NO_DEPENDENCIES}}
+// зЋ›и†»й¬Је±ђоЋ– зѕїж®Ў, иЂ¦зЋџе›—зќ‡??Microsoft Visual C++.
+// й”ђй•±жњ¦зЏћејЄ? minty.rc
 //
 #define IDR_RCDATA1                     102
 #define IDB_PNG1                        103
 #define IDR_RCDATA2                     104
+
+#define R_LANGUAGES											301
 
 // Next default values for new objects
 // 

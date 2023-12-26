@@ -110,6 +110,9 @@
     <ClCompile Include="Functions\World\AutoDestroy.cpp" />
     <ClCompile Include="Functions\World\VacuumLoot.cpp" />
     <ClCompile Include="Functions\World\MobVacuum.cpp" />
+    <ClCompile Include="GUI\ResourceLoader.cpp" />
+    <ClCompile Include="GUI\mutil.cpp" />
+    <ClCompile Include="Functions\World\AutoLootM.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gui\MainGUI.h" />
@@ -262,6 +265,9 @@
     <ClInclude Include="Functions\World\VacuumLoot.h" />
     <ClInclude Include="Functions\World\AutoChallenge.h" />
     <ClInclude Include="Functions\World\MobVacuum.h" />
+    <ClInclude Include="GUI\ResourceLoader.h" />
+    <ClInclude Include="GUI\mutil.h" />
+    <ClInclude Include="Functions\World\AutoLoot.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="api\lua\lua53.lib" />

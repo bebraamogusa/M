@@ -1,4 +1,4 @@
-#include "Settings.h"
+﻿#include "Settings.h"
 
 namespace cheat {
     static void DrawFPS();
@@ -10,7 +10,8 @@ namespace cheat {
         f_UseSignature = config::getValue("functions:Settings", "useSignature", false);
         f_ShowFps = config::getValue("functions:Settings", "showFps", true);
         f_ShowRpc = config::getValue("functions:Settings", "showRpc", true);
-        f_InitDelay = config::getValue("functions:Settings", "initDelay", 15000);
+        f_InitDelay = config::getValue("functions:Settings", "initDelay", 7000);
+	f_mobileMode = config::getValue("functions:Settings", "mobileMode", false);
         f_StartupArguments = config::getValue<std::string>("functions:Settings", "startupArguments", "");
         f_AnimationDuration = config::getValue("functions:Settings", "animationDuration", 0.2f);
         f_Hotkey = Hotkey("functions:Settings:Menu", VK_F12);
@@ -30,27 +31,29 @@ namespace cheat {
         ImGui::SameLine();
         HelpMarker("Show the Minty Menu.");
 
-        ConfigCheckbox("Disable protection", f_DisableProtection, "Close anitcheat handle.\n(changes will take effect after relaunch).");
-        ConfigCheckbox("Disable analytic log", f_DisableLog, "Disable game telemetry and analytic log from spamming the console.\n"
-            "(changes will take effect after relaunch).");
-        ConfigCheckbox("Spoof anticheat result", f_SpoofACResult, "Spoofs/Blocks anticheat reports made by WindSeedClientNotify.\n"
-            "(changes will take effect after relaunch).");
-        ConfigCheckbox("Use predefined file signature", f_UseSignature, "Uses 'hardcoded' signature value for file check.\n"
+        ConfigCheckbox(_("Disable protection"), f_DisableProtection, _("Close anitcheat handle.\n(changes will take effect after relaunch)."));
+        ConfigCheckbox(_("Disable analytic log"), f_DisableLog, _("Disable game telemetry and analytic log from spamming the console.\n"
+            "(changes will take effect after relaunch)."));
+        ConfigCheckbox(_("Spoof anticheat result"), f_SpoofACResult, _("Spoofs/Blocks anticheat reports made by WindSeedClientNotify.\n"
+            "(changes will take effect after relaunch)."));
+        ConfigCheckbox(_("Use predefined file signature"), f_UseSignature, _("Uses 'hardcoded' signature value for file check.\n"
             "Can be useful, when you put the additional executable files to game directory.\n"
             "And can't pass the 'Integrity check' on login.\n"
-            "(changes will take effect after relaunch).");
+            "(changes will take effect after relaunch)."));
 
-        ConfigCheckbox("Show current FPS", f_ShowFps, "Shows the current FPS.");
-        ConfigCheckbox("Show Discord RPC", f_ShowRpc, "Shows the Discord RPC.\n(changes will take effect after relaunch).");
+        ConfigCheckbox(_("Show current FPS"), f_ShowFps, _("Shows the current FPS."));
+        ConfigCheckbox(_("Show Discord RPC"), f_ShowRpc, _("Shows the Discord RPC.\n(changes will take effect after relaunch)."));
 
-        ConfigSliderInt("Initialization delay (ms)", f_InitDelay, 0, 60000,
-            "Change delay before showing menu.\nMay cause lags while opening, so try to change this value in case.");
+        ConfigSliderInt(_("Initialization delay (ms)"), f_InitDelay, 0, 60000,
+	    _("Change delay before showing menu.\nMay cause lags while opening, so try to change this value in case."));
 
-        ConfigInputText("Startup arguments", f_StartupArguments, "Launch the game with command line arguments.\n"
-            "(changes will take effect after relaunch).");
-        TextURL("List of unity command line arguments", "https://docs.unity3d.com/Manual/PlayerCommandLineArguments.html", false, false);
+	ConfigCheckbox(_("mobileMode"), f_mobileMode, _("Using mobile platform touch screen mode\n""please restart."));
+	    
+        ConfigInputText(_("Startup arguments"), f_StartupArguments, _("Launch the game with command line arguments.\n"
+            "(changes will take effect after relaunch)."));
+        TextURL(_("List of unity command line arguments"), "https://docs.unity3d.com/Manual/PlayerCommandLineArguments.html", false, false);
 
-        ImGui::SeparatorText("Theme");
+        ImGui::SeparatorText(_("Theme"));
 
         static int themeIndex = 1;
         if (ImGui::RadioButton("Dark", &themeIndex, 1))
@@ -59,7 +62,7 @@ namespace cheat {
         if (ImGui::RadioButton("Light", &themeIndex, 2))
             setTheme(2);
 
-        ImGui::SeparatorText("Style");
+        ImGui::SeparatorText(_("Style"));
 
         static int styleIndex = 1;
         if (ImGui::RadioButton("Cozy", &styleIndex, 1))
@@ -78,7 +81,7 @@ namespace cheat {
             setFont(2);
 
         ImGui::SeparatorText("Customize");
-        ImGui::Checkbox("Show Style Editor", &show_style_editor);
+        ImGui::Checkbox(_("Show Style Editor"), &show_style_editor);
         ConfigSliderFloat("Duration of animation (s)", f_AnimationDuration, 0, 5.0f,
             "Window appearance animation duration.");
 	}

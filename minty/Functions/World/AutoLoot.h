@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "../FunctionIncludes.h"
 #include "../../game/filters.h"

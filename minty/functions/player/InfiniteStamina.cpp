@@ -1,4 +1,4 @@
-#include "InfiniteStamina.h"
+﻿#include "InfiniteStamina.h"
 
 namespace cheat {
 	static void DataItem_HandleNormalProp_Hook(app::DataItem* __this, uint32_t type, int64_t value, app::DataPropOp__Enum state);
@@ -22,12 +22,12 @@ namespace cheat {
 	}
 
 	void InfiniteStamina::GUI() {
-		ConfigCheckbox("Infinite Stamina", f_Enabled, "Enables infinite stamina option.");
+		ConfigCheckbox(_("Infinite Stamina"), f_Enabled, _("Enables infinite stamina option."));
 
 		if (f_Enabled.getValue()) {
 			ImGui::Indent();
-			ConfigCheckbox("Move Sync Packet Replacement", f_EnabledPacket, "This mode prevents sending server packets with stamina cost actions,\n"
-				"e.g. swim, climb, sprint, etc.");
+			ConfigCheckbox(_("Move Sync Packet Replacement"), f_EnabledPacket, _("This mode prevents sending server packets with stamina cost actions,\n"
+				"e.g. swim, climb, sprint, etc."));
 			f_Hotkey.Draw();
 			ImGui::Unindent();
 		}
@@ -74,8 +74,9 @@ namespace cheat {
 		auto& manager = game::EntityManager::getInstance();
 		auto entity = manager.entity(entityId);
 
+		//LOG_DEBUG("entityType: %s", magic_enum::enum_name(entity->type()).data());
 		if (entity->type() == app::EntityType__Enum_1::Vehicle || entity->isAvatar()) {
-			// LOG_DEBUG("Movement packet: %s", magic_enum::enum_name(app::MotionInfo_get_State(syncInfo)).data());
+			//LOG_DEBUG("Movement packet: %s", magic_enum::enum_name(app::MotionInfo_get_State(syncInfo)).data());
 			if (infiniteStamina.f_Enabled.getValue() && infiniteStamina.f_EnabledPacket.getValue()) {
 				auto state = app::MotionInfo_get_State(syncInfo);
 				switch (state) {

@@ -1,4 +1,4 @@
-#include "UnlockFPS.h"
+﻿#include "UnlockFPS.h"
 
 namespace cheat {
 	static void onUpdate_2(app::GameManager* __this, app::MethodInfo* method);
@@ -19,13 +19,13 @@ namespace cheat {
 	}
 
 	void UnlockFPS::GUI() {
-		ConfigCheckbox("Unlock FPS", f_Enabled, "Unlocks higher framerate.");
+		ConfigCheckbox(_("Unlock FPS"), f_Enabled, _("Unlocks higher framerate."));
 
 		if (f_Enabled.getValue()) {
 			ImGui::Indent();
 			ConfigSliderInt(_("FPS"), f_Fps, 1, 360);
-			ConfigCheckbox("Lock FPS", f_EnabledLimit, "Limit framerate while the game window isn't focused.\n"
-				"This won't work if the cheat menu is open or if you're in a loading screen.");
+			ConfigCheckbox(_("Lock FPS"), f_EnabledLimit, _("Limit framerate while the game window isn't focused.\n"
+				"This won't work if the cheat menu is open or if you're in a loading screen."));
 
 			if (f_EnabledLimit.getValue())
 				ConfigSliderInt(_("FPS Limit"), f_FpsLimit, 1, 360);

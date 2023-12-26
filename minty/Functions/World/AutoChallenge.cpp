@@ -22,7 +22,7 @@ namespace cheat
 
 	void AutoChallenge::GUI()
 	{
-		ConfigCheckbox("Auto challenge", f_Enabled, _("Auto collect time challenge item"));
+		ConfigCheckbox(_("Auto challenge"), f_Enabled, _("Auto collect time challenge item"));
 
 		if (f_Enabled.getValue()) {
 			ImGui::Indent();

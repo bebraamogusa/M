@@ -1,4 +1,4 @@
-#include "GodMode.h"
+﻿#include "GodMode.h"
 
 namespace cheat {
 	static void VCHumanoidMove_NotifyLandVelocity_Hook(app::VCHumanoidMove* __this, app::Vector3 velocity, float reachMaxDownVelocityTime);
@@ -18,7 +18,7 @@ namespace cheat {
 	}
 
 	void GodMode::GUI() {
-		ConfigCheckbox("God Mode", f_Enabled, "Enables god mode, i.e. no incoming damage including environmental damage.");
+		ConfigCheckbox(_("God Mode"), f_Enabled, _("Enables god mode, i.e. no incoming damage including environmental damage."));
 
 		if (f_Enabled.getValue()) {
 			ImGui::Indent();
