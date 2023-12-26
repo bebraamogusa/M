@@ -76,6 +76,7 @@
     "Spoofs/Blocks anticheat reports made by WindSeedClientNotify.\n(changes will take effect after relaunch).": "欺骗/阻止 WindSeedClientNotify 生成的反作弊报告.\n（更改将在重新启动后生效）.",
     "Uses 'hardcoded' signature value for file check.\nCan be useful, when you put the additional executable files to game directory.\nAnd can't pass the 'Integrity check' on login.\n(changes will take effect after relaunch).": "使用“硬编码”签名值进行文件检查.\n当您将附加可执行文件放入游戏目录时很有用.\n并且无法通过登录时的“完整性检查”.\n（更改将在之后生效 重新启动）.",
     "Shows the current FPS.": "显示当前 FPS.",
+    "Show/Hide console log window.": "显示/隐藏 控制台日志窗口.",
     "Shows the Discord RPC.\n(changes will take effect after relaunch).": "显示 Discord RPC.\n（更改将在重新启动后生效）.",
     "Change delay before showing menu.\nMay cause lags while opening, so try to change this value in case.": "更改显示菜单之前的延迟.\n打开时可能会导致延迟，因此请尝试更改此值以防万一.",
     "Launch the game with command line arguments.\n(changes will take effect after relaunch).": "使用命令行参数启动游戏.\n（更改将在重新启动后生效）.",

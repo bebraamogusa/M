@@ -15,8 +15,9 @@ namespace cheat {
         f_StartupArguments = config::getValue<std::string>("functions:Settings", "startupArguments", "");
         f_AnimationDuration = config::getValue("functions:Settings", "animationDuration", 0.2f);
         f_Hotkey = Hotkey("functions:Settings:Menu", VK_F12);
-
+	f_HotkeyConsole= Hotkey("functions:Settings:Console", VK_HOME);
         f_ShowMenu = true;
+	f_ShowConsole = true;
     }
 
     Settings& Settings::getInstance() {
@@ -27,9 +28,14 @@ namespace cheat {
     void Settings::GUI() {
         ImGui::SeparatorText("General");
 
-        f_Hotkey.Draw();
+        f_Hotkey.Draw();	
         ImGui::SameLine();
         HelpMarker("Show the Minty Menu.");
+	ImGui::Text(_("Show/Hide console log window."));	
+	ImGui::SameLine();
+	f_HotkeyConsole.Draw();
+	ImGui::SameLine();
+	HelpMarker("Show/Hide console log window.");
 
         ConfigCheckbox(_("Disable protection"), f_DisableProtection, _("Close anitcheat handle.\n(changes will take effect after relaunch)."));
         ConfigCheckbox(_("Disable analytic log"), f_DisableLog, _("Disable game telemetry and analytic log from spamming the console.\n"
@@ -90,6 +96,18 @@ namespace cheat {
         if (f_Hotkey.IsPressed())
             f_ShowMenu = !f_ShowMenu;
 
+	if (f_HotkeyConsole.IsPressed())
+	{
+	    if (f_ShowConsole)
+	    {
+		ShowWindow(GetConsoleWindow(), SW_SHOW);
+	    }
+	    else
+	    {
+		ShowWindow(GetConsoleWindow(), SW_HIDE);
+	    }
+	    f_ShowConsole = !f_ShowConsole;
+	}
         if (f_ShowFps.getValue())
             DrawFPS();
 
