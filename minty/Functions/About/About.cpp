@@ -1,4 +1,4 @@
-#include "About.h"
+﻿#include "About.h"
 
 namespace cheat {
 	void About::GUI() {
@@ -15,8 +15,7 @@ namespace cheat {
         ImGui::TextColored(ImVec4(57.0F / 255.0F, 68.0F / 255.0F, 219.0F / 255.0F, 1.0), "Contributors: EtoShinya, KittyKate, lilmayofuksu, USSY, akioukun, sad_akulka, Micah, wat3r1ng");
         ImGui::TextColored(ImVec4(255, 0, 212, 255), "Donaters: Thomas_Heath, Blair, unmeinoshonen, USSY");
         ImGui::TextColored(ImVec4(0, 255, 179, 255), "Special thanks to family: Futchev, yarik0chka, keitaro_gg");
-        ImGui::TextColored(ImVec4(255, 233, 233, 22), "Translator: Micah, Amireux");
-        ImGui::TextColored(ImVec4(255, 233, 233, 22), "Translator: Micah,Amireux,d3adp3r50n");
+        ImGui::TextColored(ImVec4(212, 0, 179, 255), "Translator: Micah, Amireux, d3adp3r50n");
 
 
 	ImGui::Text("Minty Github: ");

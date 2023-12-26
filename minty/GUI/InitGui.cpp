@@ -12,6 +12,8 @@ void MergeIconsWithLatestFont(float font_size, bool FontDataOwnedByAtlas) {
     ImGui::GetIO().Fonts->AddFontFromMemoryTTF((void*)fa_solid_900, sizeof(fa_solid_900), font_size, &icons_config, icons_ranges);
 }
 
+
+
 void gui::InitImGui(HWND window, ID3D11Device* pDevice, ID3D11DeviceContext* pContext) {
     ImGui::CreateContext();
 
@@ -22,18 +24,15 @@ void gui::InitImGui(HWND window, ID3D11Device* pDevice, ID3D11DeviceContext* pCo
     ImGui_ImplDX11_Init(pDevice, pContext);
 
     ImGui::GetIO().ImeWindowHandle = window;
+
     ImFontConfig font_cfg;
-
-    
-
     font_cfg.FontDataOwnedByAtlas = false;
-
     ImGui::GetIO().Fonts->AddFontFromMemoryTTF((void*)tahoma, sizeof(tahoma), 17.f, &font_cfg);
     // init notify
     //MergeIconsWithLatestFont(16.f, false);
     LoadThemes();
-    LoadFonts();
-    LoadFontFromResources(font_cfg, MAKEINTRESOURCEW(102), 20.f);
+    //LoadFonts();
+    LoadFontFromResources(font_cfg, MAKEINTRESOURCEW(R_FONT_CN), 20.f);
     Init();
 }
 
