@@ -3,7 +3,7 @@
 #include "../FunctionIncludes.h"
 
 namespace cheat {
-	class ShowChestIndicator : public Function {
+	class ShowIndicators : public Function {
 	public:
 	    ConfigField<bool> f_Enabled;
 	    ConfigField<bool> f_Waypoints;
@@ -17,8 +17,8 @@ namespace cheat {
 
 	    std::string getModule() override;
 
-	    static ShowChestIndicator& getInstance();
+	    static ShowIndicators& getInstance();
 
-	    ShowChestIndicator();
+	    ShowIndicators();
 	};
 }

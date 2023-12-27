@@ -9,16 +9,18 @@ namespace cheat {
         f_SpoofACResult = config::getValue("functions:Settings", "spoofACResult", true);
         f_UseSignature = config::getValue("functions:Settings", "useSignature", false);
         f_ShowFps = config::getValue("functions:Settings", "showFps", true);
-        f_ShowRpc = config::getValue("functions:Settings", "showRpc", true);
+	f_ShowRpc = config::getValue("functions:Settings", "showRpc", true);
+	f_ShowConsole = config::getValue("functions:Settings", "showConsole", true);
         f_InitDelay = config::getValue("functions:Settings", "initDelay", 7000);
 	f_Language = config::getValue("functions:Settings", "f_Language", 0);
-	f_mobileMode = config::getValue("functions:Settings", "mobileMode", false);
+	f_MobileMode = config::getValue("functions:Settings", "mobileMode", false);
         f_StartupArguments = config::getValue<std::string>("functions:Settings", "startupArguments", "");
-        f_AnimationDuration = config::getValue("functions:Settings", "animationDuration", 0.2f);
+	f_AnimationDuration = config::getValue("functions:Settings", "animationDuration", 0.2f);
+	f_Status = config::getValue("functions:Settings", "status", true);
+	f_StatusMove = config::getValue("functions:Settings", "statusMove", true);
         f_Hotkey = Hotkey("functions:Settings:Menu", VK_F12);
 	f_HotkeyConsole= Hotkey("functions:Settings:Console", VK_HOME);
         f_ShowMenu = true;
-	f_ShowConsole = true;
     }
 
     Settings& Settings::getInstance() {
@@ -28,21 +30,18 @@ namespace cheat {
     const char* languages[] = { "English", "Russian", "Chinese", "Indonesian" };
     void RefreshMenu() {
       // 刷新菜单的逻辑
-      
-
-
     }
     void Settings::GUI() {
         ImGui::SeparatorText("General");
 
-        f_Hotkey.Draw();	
-        ImGui::SameLine();
-        HelpMarker("Show the Minty Menu.");
-	ImGui::Text(_("Show/Hide console log window."));	
-	ImGui::SameLine();
-	f_HotkeyConsole.Draw();
-	ImGui::SameLine();
-	HelpMarker("Show/Hide console log window.");
+	f_Hotkey.Draw(_("Show the Minty Menu."));
+
+	ConfigCheckbox(_("Show console"), f_ShowConsole, _("Show/Hide console log window."));
+	if (f_Status.getValue()) {
+	    ImGui::Indent();
+	    f_HotkeyConsole.Draw();
+	    ImGui::Unindent();
+	}
 
         ConfigCheckbox(_("Disable protection"), f_DisableProtection, _("Close anitcheat handle.\n(changes will take effect after relaunch)."));
         ConfigCheckbox(_("Disable analytic log"), f_DisableLog, _("Disable game telemetry and analytic log from spamming the console.\n"
@@ -54,13 +53,21 @@ namespace cheat {
             "And can't pass the 'Integrity check' on login.\n"
             "(changes will take effect after relaunch)."));
 
+	ConfigCheckbox(_("Show status window"), f_Status, _("Shows a window with statements of enabled functions."));
+
+	if (f_Status.getValue()) {
+	    ImGui::Indent();
+	    ConfigCheckbox(_("Move status window"), f_StatusMove);
+	    ImGui::Unindent();
+	}
+
         ConfigCheckbox(_("Show current FPS"), f_ShowFps, _("Shows the current FPS."));
         ConfigCheckbox(_("Show Discord RPC"), f_ShowRpc, _("Shows the Discord RPC.\n(changes will take effect after relaunch)."));
 
         ConfigSliderInt(_("Initialization delay (ms)"), f_InitDelay, 0, 60000,
 	    _("Change delay before showing menu.\nMay cause lags while opening, so try to change this value in case."));
 
-	ConfigCheckbox(_("mobileMode"), f_mobileMode, _("Using mobile platform touch screen mode\n""please restart."));
+	ConfigCheckbox(_("mobileMode"), f_MobileMode, _("Using mobile platform touch screen mode\n""please restart."));
 
 	//更换语言
 	ConfigComboLanguage(f_Language);
@@ -100,9 +107,6 @@ namespace cheat {
         ImGui::Checkbox(_("Show Style Editor"), &show_style_editor);
         ConfigSliderFloat("Duration of animation (s)", f_AnimationDuration, 0, 5.0f,
             "Window appearance animation duration.");
-
-
-
 	}
 
     void Settings::Outer() {
@@ -110,17 +114,13 @@ namespace cheat {
             f_ShowMenu = !f_ShowMenu;
 
 	if (f_HotkeyConsole.IsPressed())
-	{
-	    if (f_ShowConsole)
-	    {
-		ShowWindow(GetConsoleWindow(), SW_SHOW);
-	    }
-	    else
-	    {
-		ShowWindow(GetConsoleWindow(), SW_HIDE);
-	    }
-	    f_ShowConsole = !f_ShowConsole;
-	}
+	    f_ShowConsole.setValue(!f_ShowConsole.getValue());
+
+	if (f_ShowConsole.getValue())
+	    ShowWindow(GetConsoleWindow(), SW_SHOW);
+	else
+	    ShowWindow(GetConsoleWindow(), SW_HIDE);
+	
         if (f_ShowFps.getValue())
             DrawFPS();
 

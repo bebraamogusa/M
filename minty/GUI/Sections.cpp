@@ -17,7 +17,7 @@
 #include "../functions/visuals/NoFog.h"
 #include "../functions/visuals/Peeking.h"
 #include "../functions/visuals/ProfileChanger.h"
-#include "../functions/visuals/ShowChestIndicator.h"
+#include "../functions/visuals/ShowIndicators.h"
 #include "../functions/visuals/UnlockFPS.h"
 
 //#include "../functions/world/AutoLoot.h"
@@ -62,7 +62,7 @@ void Init() {
   INIT_FUNC(NoFog);
   INIT_FUNC(Peeking);
   INIT_FUNC(ProfileChanger);
-  INIT_FUNC(ShowChestIndicator);
+  INIT_FUNC(ShowIndicators);
   INIT_FUNC(UnlockFPS);
 
   //INIT_FUNC(AutoLoot);
@@ -84,6 +84,31 @@ void Outer() {
   for (auto& func : functions)
     func->Outer();
 }
+
+void Status()
+{
+    auto& settings = cheat::Settings::getInstance();
+    if (!settings.f_Status.getValue())
+	return;
+
+    ImGuiWindowFlags flags = 
+	ImGuiWindowFlags_NoCollapse |
+	ImGuiWindowFlags_NoDecoration |
+	ImGuiWindowFlags_AlwaysAutoResize |
+	ImGuiWindowFlags_NoBringToFrontOnFocus |
+	ImGuiWindowFlags_NoFocusOnAppearing;
+
+    if (!settings.f_StatusMove.getValue())
+	flags |= ImGuiWindowFlags_NoMove;
+
+    ImGui::Begin("Status", nullptr, flags);
+    for (auto& feature : functions)
+    {
+	feature->Status();
+    }
+    ImGui::End();
+}
+
 
 void DrawSection(const std::string& moduleName) {
   for (auto& func : functions) {

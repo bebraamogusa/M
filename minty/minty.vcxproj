@@ -169,7 +169,7 @@
     <ClCompile Include="Functions\World\MobVacuum.cpp" />
     <ClCompile Include="functions\world\OpenTeamImmediately.cpp" />
     <ClCompile Include="functions\visuals\ProfileChanger.cpp" />
-    <ClCompile Include="functions\visuals\ShowChestIndicator.cpp" />
+    <ClCompile Include="functions\visuals\ShowIndicators.cpp" />
     <ClCompile Include="functions\world\SkipEnhanceAnimation.cpp" />
     <ClCompile Include="functions\settings\Settings.cpp" />
     <ClCompile Include="api\discord\src\connection_win.cpp" />
@@ -230,7 +230,7 @@
     <ClInclude Include="Functions\World\MobVacuum.h" />
     <ClInclude Include="functions\world\OpenTeamImmediately.h" />
     <ClInclude Include="functions\visuals\ProfileChanger.h" />
-    <ClInclude Include="functions\visuals\ShowChestIndicator.h" />
+    <ClInclude Include="functions\visuals\ShowIndicators.h" />
     <ClInclude Include="functions\world\SkipEnhanceAnimation.h" />
     <ClInclude Include="functions\settings\Settings.h" />
     <ClCompile Include="config\ConfigManager.cpp">

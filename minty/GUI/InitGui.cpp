@@ -13,7 +13,6 @@ void MergeIconsWithLatestFont(float font_size, bool FontDataOwnedByAtlas) {
 }
 
 
-
 void gui::InitImGui(HWND window, ID3D11Device* pDevice, ID3D11DeviceContext* pContext) {
     ImGui::CreateContext();
 
@@ -41,6 +40,7 @@ void gui::Render() {
     ImGui_ImplDX11_NewFrame();
     ImGui::NewFrame();
     Outer();
+    Status();
 
     auto& settings = cheat::Settings::getInstance();
     static double startTime = ImGui::GetTime();

@@ -1,4 +1,4 @@
-#ifndef IL2CPP_TYPES_H
+﻿#ifndef IL2CPP_TYPES_H
 #define IL2CPP_TYPES_H
 
 // ******************************************************************************
