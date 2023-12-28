@@ -109,7 +109,9 @@
     "English": "英语",
     "Russian": "俄语",
     "Chinese": "中文",
-    "Indonesian": "印尼语"
+    "GodMode": "上帝模式",
+    "Indonesian": "印尼语",
+    "Unlock FPS: %d": "解锁 FPS: %d"
   },
   "RU": {
 	"About": "О нас",
