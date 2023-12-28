@@ -111,7 +111,17 @@
     "Chinese": "中文",
     "GodMode": "上帝模式",
     "Indonesian": "印尼语",
-    "Unlock FPS: %d": "解锁 FPS: %d"
+    "Unlock FPS: %d": "解锁 FPS: %d",
+    "Show console": "显示控制台",
+    "Show status window": "显示状态窗口",
+    "Move status window": "移动状态窗口",
+    "Shows a window with statements of enabled functions.": "显示一个窗口，其中包含已启用功能的说明",
+    "mobileMode": "移动模式",
+    "Using mobile platform touch screen mode\nplease restart.": "使用移动平台触摸屏模式。\n请重新启动",
+    "Show indicators": "显示指示器",
+    "Show chests or/and waypoints indicators.": "显示箱子或锚点指示器。",
+    "Show chests indicators": "显示宝箱指示器",
+    "Show waypoints indicators": "显示锚点指示器"
   },
   "RU": {
 	"About": "О нас",
